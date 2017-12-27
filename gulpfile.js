@@ -8,6 +8,7 @@ var gulp            = require('gulp'),
     cssnano         = require('gulp-cssnano'),
     del             = require('del'),
     autoprefixer    = require('gulp-autoprefixer'),
+    notify          = require('gulp-notify'),
     sourcemaps      = require('gulp-sourcemaps');
 
 gulp.task('sass', function(){
@@ -25,7 +26,11 @@ gulp.task('pug', function() {
         .pipe(pug({
             pretty: true
         }))
+        .on('error', notify.onError(function (error) {
+            return 'An error occurred while compiling jade.\nLook in the console for details.\n' + error;
+        }))
         .pipe(gulp.dest('app/'))
+        
         .pipe(browserSync.reload({stream: true}))
 });
 
@@ -55,7 +60,7 @@ gulp.task('css-libs', ['sass'], function() {
         .pipe(gulp.dest('app/css'));
 });
 
-gulp.task('watch', ['browser-sync', 'pug' , 'css-libs', 'scripts'], function() {
+gulp.task('watch', ['pug' , 'browser-sync', 'css-libs', 'scripts'], function() {
     gulp.watch('app/sass/**/*.scss', ['sass']);
     gulp.watch('./app/pug/**/*.pug', ['pug']);
     gulp.watch('.app/*.html', browserSync.reload);
