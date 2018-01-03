@@ -106,4 +106,16 @@
   text-align: center;
 }
 
+@media (max-width: 767px) {
+  .s1 {
+    background-color: green;
+  }
+  .s2 {
+    background-color: lightblue;
+  }
+  .s1, .s2 {
+    height: 500px;
+  }
+}
+
 /*# sourceMappingURL=../css/main.css.map */
