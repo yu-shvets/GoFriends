@@ -9,12 +9,14 @@ var gulp            = require('gulp'),
     del             = require('del'),
     autoprefixer    = require('gulp-autoprefixer'),
     notify          = require('gulp-notify'),
+    gcmq            = require('gulp-group-css-media-queries');
     sourcemaps      = require('gulp-sourcemaps');
 
 gulp.task('sass', function(){
     return gulp.src('app/sass/**/*.scss')
         .pipe(sourcemaps.init())
             .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
+            .pipe(gcmq())
             .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: false }))
         .pipe(sourcemaps.write('../css', {addComment: true}))
         .pipe(gulp.dest('app/css'))
