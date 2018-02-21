@@ -1,45 +1,319 @@
-{% load static from staticfiles %}
-{% load widget_tweaks %}
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    {% block title %}<title>{{ index.title }}</title>{% endblock title %}
-    {% block description %}<meta name="description" content="{{ index.description }}">{% endblock description %}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bootstrap/3.3.0/css/bootstrap.min.css">
-</head>
-<body>
-    <div class="container">
-        <nav class="navbar navbar-default">
-            <h4 class="navbar-text"><a href="{% url 'home' %}">GoFriends</a></h4>
-            <ul class="nav navbar-nav">
-
+  <head></head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>GoFriends</title>
+  <link href="css/libs.min.css" rel="stylesheet">
+  <link href="css/main.css" rel="stylesheet">
+  <body>
+    <header class="header">
+      <div class="header__wrapper">
+        <div class="header__row"><a class="header__logo" href="#"><img src="../../img/logo.png" alt="logo" title="logo"></a>
+          <nav class="nav header-nav">
+            <ul class="nav__list header-list">
+              <li class="nav__item nav__item_inline header-item"><a class="nav__link nav__link_primary header-link" href="#">home</a></li>
+              <li class="nav__item nav__item_inline header-item"><a class="nav__link nav__link_primary header-link" href="#">case studies</a></li>
+              <li class="nav__item nav__item_inline header-item"><a class="nav__link nav__link_primary header-link" href="#">services</a></li>
+              <li class="nav__item nav__item_inline header-item"><a class="nav__link nav__link_primary header-link" href="#">industries</a></li>
+              <li class="nav__item nav__item_inline header-item"><a class="nav__link nav__link_primary header-link" href="#">technolgies</a></li>
+              <li class="nav__item nav__item_inline header-item"><a class="nav__link nav__link_primary header-link" href="#">about us</a></li>
+              <li class="nav__item nav__item_inline header-item"><a class="nav__link nav__link_primary header-link" href="#">contacts</a></li>
             </ul>
-            <ul class="nav navbar-nav pull-right">
-
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <section class="banner"> 
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide" style="background-image:url(&quot;../../img/slider-1.png&quot;);">
+              <div class="banner__wrapper">
+                <div class="banner__container">
+                  <div class="banner__row">
+                    <p class="banner__title">development design marketing</p>
+                    <div class="banner__benefits benefits-banner">
+                      <p class="benefits-banner__title"> <span class="benefits-banner__bold">21</span><br>people in the team</p>
+                      <p class="benefits-banner__title"> <span class="benefits-banner__bold">150+</span><br>projects delivered</p>
+                      <p class="benefits-banner__title"><span class="benefits-banner__bold">5+</span><br>years of expirience</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide" style="background-image:url(&quot;../../img/slider-1.png&quot;);">2</div>
+            <div class="swiper-slide" style="background-image:url(&quot;../../img/slider-1.png&quot;);">3</div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </section>
+      <section class="section section_dark services">
+        <div class="section__container">
+          <div class="section__column">
+            <h2 class="section__title-primary">Our services</h2>
+            <ul class="section__list list-section list-section_services section__list_services">
+              <li class="list-section__item list-section__item_inline list-section__item_services">
+                <div class="list-section__wrap"><img class="list-section__img" src="../../img/serv1.png" alt="web development"></div>
+                <p class="list-section__title">Web development</p>
+              </li>
+              <li class="list-section__item list-section__item_inline list-section__item_services">
+                <div class="list-section__wrap"><img class="list-section__img" src="../../img/serv2.png" alt="web development"></div>
+                <p class="list-section__title">Mobile development</p>
+              </li>
+              <li class="list-section__item list-section__item_inline list-section__item_services">
+                <div class="list-section__wrap"><img class="list-section__img" src="../../img/serv-3.png" alt="web development"></div>
+                <p class="list-section__title">Dedicated team</p>
+              </li>
+              <li class="list-section__item list-section__item_inline list-section__item_services">
+                <div class="list-section__wrap"><img class="list-section__img" src="../../img/serv4.png" alt="web development"></div>
+                <p class="list-section__title">UI/UX Design</p>
+              </li>
+              <li class="list-section__item list-section__item_inline list-section__item_services">
+                <div class="list-section__wrap"><img class="list-section__img" src="../../img/serv5.png" alt="web development"></div>
+                <p class="list-section__title">Market</p>
+              </li>
             </ul>
-        </nav>
-
-        {% block content %}
-
-            <p id="success"></p>
-
-          <form id="customer_form" class="form-horizontal" method="post" action="{% url 'customer_create' %}">
-              {% csrf_token %}
-                      <div style="width: 25pc">
-                      <p>{% render_field form.name class="form-control" placeholder=form.name.label %}</p>
-                      <p>{% render_field form.mail class="form-control" placeholder=form.mail.label %}</p>
+          </div>
+        </div>
+      </section>
+      <section class="section cases">
+        <div class="section__container">
+          <div class="section__column">
+            <h2 class="section__title-primary">Case studies</h2>
+            <div class="cases__single">
+              <div class="cases__description">
+                <h3 class="section__text section__text_sub-1 section__text_cases">Gofriends Marketplace</h3>
+                <p class="section__text section__text_sub-2">GoFriends Marketplace – excellent software solutions.</p>
+                <p class="mt-20">We help business by creating our products: convenient and easy to use, beautifully designed. Inspired to help business become outstanding.</p>
+                <div><a class="button-primary button button_shadow cases__button" href="#">Explore more</a></div>
+              </div>
+              <div class="cases__layout">
+                <div class="cases__header">
+                  <div class="cases__settings"><span class="cases__settings-circle"></span><span class="cases__settings-circle"></span><span class="cases__settings-circle"></span></div>
+                </div><img src="../../img/ross.jpeg" alt="">
+              </div>
+            </div>
+            <div class="cases__single">
+              <div class="cases__layout">
+                <div class="cases__header">
+                  <div class="cases__settings"><span class="cases__settings-circle"></span><span class="cases__settings-circle"></span><span class="cases__settings-circle"></span></div><img src="../../img/ross.jpeg" alt="">
+                </div>
+              </div>
+              <div class="cases__description">
+                <h3 class="section__text section__text_sub-1 section__text_cases">Gofriends Marketplace</h3>
+                <p class="section__text section__text_sub-2">GoFriends Marketplace – excellent software solutions.</p>
+                <p class="mt-20">We help business by creating our products: convenient and easy to use, beautifully designed. Inspired to help business become outstanding.</p>
+                <div><a class="button-primary button button_shadow cases__button" href="#">Explore more</a></div>
+              </div>
+            </div>
+            <div class="cases__single">
+              <div class="cases__description">
+                <h3 class="section__text section__text_sub-1 section__text_cases">Gofriends Marketplace</h3>
+                <p class="section__text section__text_sub-2">GoFriends Marketplace – excellent software solutions.</p>
+                <p class="mt-20">We help business by creating our products: convenient and easy to use, beautifully designed. Inspired to help business become outstanding.</p>
+                <div><a class="button-primary button button_shadow cases__button" href="#">Explore more</a></div>
+              </div>
+              <div class="cases__layout">
+                <div class="cases__header">
+                  <div class="cases__settings"><span class="cases__settings-circle"></span><span class="cases__settings-circle"></span><span class="cases__settings-circle"></span></div>
+                </div><img src="../../img/ross.jpeg" alt="">
+              </div>
+            </div>
+            <div class="cases__single">
+              <div class="cases__layout">
+                <div class="cases__header">
+                  <div class="cases__settings"><span class="cases__settings-circle"></span><span class="cases__settings-circle"></span><span class="cases__settings-circle"></span></div><img src="../../img/ross.jpeg" alt="">
+                </div>
+              </div>
+              <div class="cases__description">
+                <h3 class="section__text section__text_sub-1 section__text_cases">Gofriends Marketplace</h3>
+                <p class="section__text section__text_sub-2">GoFriends Marketplace – excellent software solutions.</p>
+                <p class="mt-20">We help business by creating our products: convenient and easy to use, beautifully designed. Inspired to help business become outstanding.</p>
+                <div><a class="button-primary button button_shadow cases__button" href="#">Explore more</a></div>
+              </div>
+            </div><a class="button-primary button button_shadow cases__button" href="#">View all cases</a>
+          </div>
+        </div>
+      </section>
+      <section class="section section_dark activity">
+        <div class="section__container">
+          <div class="section__column">
+            <h2 class="section__title-primary">Our Scope of Activity</h2>
+            <p class="activity__subtitle">GoFriendsPro Company specializes in developing of task-oriented IT solutions for healthcare, fitness and sport. Additionally, we create functional applications for various business areas, including:</p>
+            <ul class="section__list list-section list-section_services section__list_activity">
+              <li class="list-section__item list-section__item_inline list-section_activity">
+                <div class="list-section__wrap"><img class="list-section__img" src="../../img/activity-1t.png" alt="web development"></div><a class="list-section__title activity__link" href="#">e-commerce</a>
+              </li>
+              <li class="list-section__item list-section__item_inline list-section_activity">
+                <div class="list-section__wrap"><img class="list-section__img" src="../../img/activity-2.png" alt="web development"></div><a class="list-section__title activity__link" href="#">social networking</a>
+              </li>
+              <li class="list-section__item list-section__item_inline list-section__item_services list-section_activity">
+                <div class="list-section__wrap"><img class="list-section__img" src="../../img/activity-3l.png" alt="web development"></div><a class="list-section__title activity__link" href="#">film studios</a>
+              </li>
+              <li class="list-section__item list-section__item_inline list-section_activity">
+                <div class="list-section__wrap"><img class="list-section__img" src="../../img/activity-4.png" alt="web development"></div><a class="list-section__title activity__link" href="#">cryptocurrency exchanging</a>
+              </li>
+              <li class="list-section__item list-section__item_inline list-section_activity">
+                <div class="list-section__wrap"><img class="list-section__img" src="../../img/activity-5.png" alt="web development"></div><a class="list-section__title activity__link" href="#">restaurants</a>
+              </li>
+              <li class="list-section__item list-section__item_inline list-section_activity">
+                <div class="list-section__wrap"><img class="list-section__img" src="../../img/activity-6.png" alt="web development"></div><a class="list-section__title activity__link" href="#">online events monitoring</a>
+              </li>
+              <li class="list-section__item list-section__item_inline list-section_activity">
+                <div class="list-section__wrap"><img class="list-section__img" src="../../img/activity-7.png" alt="web development"></div><a class="list-section__title activity__link" href="#">tourism</a>
+              </li>
+            </ul>
+            <p class="activity__subtitle">Quite naturally, we develop custom, task-oriented, multifunctional apps on your request, whereas these complex, comprehensive services are labor-intensive and resource-consuming.</p>
+          </div>
+        </div>
+      </section>
+      <section class="section about">
+        <div class="section__container">
+          <div class="section__column">
+            <h2 class="section__title-primary">About us</h2>
+            <p class="mt-10">GofriendsPro: Your Pass to Success</p>
+          </div>
+        </div>
+        <div class="about__single single-about mt-60">
+          <div class="single-about__img" style="background-image: url();"></div>
+          <div class="single-about__description">
+            <div class="single-about__wrapper">
+              <h3 class="section__text section__text_theme section__text_sub-2 section__text_subtitle">Go Friends is a professional, fast-growing software development agency.    </h3>
+              <p class="mt-20">
+                Our team of young, competent and creative professionals:
+                strategists, front-end and back-end developers, 
+                UI/UX designers, SEO and marketing experts, testing & quality assurance (QA) engineers, is well-coordinated and 
+                success-oriented.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="about__single single-about">
+          <div class="single-about__description">
+            <div class="single-about__wrapper"> 
+              <p class="mt-20"><span class="section__text_theme">We provide </span>comprehensive, full-cycle development 
+                services for our valued customers, being friendly and 
+                client-oriented.
+              </p>
+            </div>
+          </div>
+          <div class="single-about__img" style="background-image: url();"></div>
+        </div>
+              <div class="about__single single-about">
+                <div class="single-about__img" style="background-image: url();"></div>
+                <div class="single-about__description">
+                  <div class="single-about__wrapper"> <span class="section__text_theme">We focus </span><span> on the project’s purposes and your requirements, creating outstanding functionality and design of every software solution. Our developers are well-versed in the most advanced and efficient technologies and programming languages such as PHP, Python, Django, Node JS.</span></div>
+                </div>
+              </div>
+              <div class="about__single single-about">
+                <div class="single-about__description">
+                  <div class="single-about__wrapper"> <span class="section__text_theme">Nowadays </span><span>we are expanding to the global markets, including the USA and Europe. We help our outsourcing customers with websites development and promotion, CRM and ERP applications building.</span></div>
+                </div>
+                <div class="single-about__img" style="background-image: url();"></div>
+              </div>
+      </section>
+      <section class="section section_dark team">
+        <div class="section__container">
+          <div class="section__column">
+            <h2 class="section__title-primary">Our Team</h2>
+            <div class="team__wrapper">
+              <div class="owl-carousel">
+                      <div class="team__single item">
+                        <div class="team__avatar" style="background-image:url(&quot;../../img/team.png&quot;);"></div>
+                        <div class="team__description">
+                          <div class="team__name">name</div>
+                          <div class="team__position">UX/UI &amp; Frontend Design</div>
+                        </div>
                       </div>
-                <button type="submit" class="btn btn-primary">Send</button>
-          </form>
-
-        {% endblock content %}
-
-    </div>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="{% static "gofriends_site/js/main.js" %}"></script>
-</body>
+                      <div class="team__single item">
+                        <div class="team__avatar" style="background-image:url(&quot;../../img/team.png&quot;);"></div>
+                        <div class="team__description">
+                          <div class="team__name">name</div>
+                          <div class="team__position">UX/UI &amp; Frontend Design</div>
+                        </div>
+                      </div>
+                      <div class="team__single item">
+                        <div class="team__avatar" style="background-image:url(&quot;../../img/team.png&quot;);"></div>
+                        <div class="team__description">
+                          <div class="team__name">name</div>
+                          <div class="team__position">UX/UI &amp; Frontend Design</div>
+                        </div>
+                      </div>
+                      <div class="team__single item">
+                        <div class="team__avatar" style="background-image:url(&quot;../../img/team.png&quot;);"></div>
+                        <div class="team__description">
+                          <div class="team__name">name</div>
+                          <div class="team__position">UX/UI &amp; Frontend Design</div>
+                        </div>
+                      </div>
+                      <div class="team__single item">
+                        <div class="team__avatar" style="background-image:url(&quot;../../img/team.png&quot;);"></div>
+                        <div class="team__description">
+                          <div class="team__name">name</div>
+                          <div class="team__position">UX/UI &amp; Frontend Design</div>
+                        </div>
+                      </div>
+                      <div class="team__single item">
+                        <div class="team__avatar" style="background-image:url(&quot;../../img/team.png&quot;);"></div>
+                        <div class="team__description">
+                          <div class="team__name">name</div>
+                          <div class="team__position">UX/UI &amp; Frontend Design</div>
+                        </div>
+                      </div>
+                      <div class="team__single item">
+                        <div class="team__avatar" style="background-image:url(&quot;../../img/team.png&quot;);"></div>
+                        <div class="team__description">
+                          <div class="team__name">name</div>
+                          <div class="team__position">UX/UI &amp; Frontend Design</div>
+                        </div>
+                      </div>
+                      <div class="team__single item">
+                        <div class="team__avatar" style="background-image:url(&quot;../../img/team.png&quot;);"></div>
+                        <div class="team__description">
+                          <div class="team__name">name</div>
+                          <div class="team__position">UX/UI &amp; Frontend Design</div>
+                        </div>
+                      </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section section_dark clients">
+        <div class="section__container">
+          <div class="section__row section__row_center"><img class="clients__logo" src="../../img/cl1.png"><img class="clients__logo" src="../../img/cl2.png"><img class="clients__logo" src="../../img/cl3.png"></div>
+        </div>
+      </section>
+      <section class="section tm">
+        <div class="section__container">
+          <div class="section__column">
+            <h2 class="section__title-primary">Testimonial</h2>
+            <div class="tm__wrapper">
+              <div id="test">
+                <div class="tm__single item"><a class="tm__img" href="#" style="background-image:url(&quot;../../img/team.png&quot;);">
+                    <p class="tm__img-name">yeap</p>
+                    <p class="tm__img-position">test</p></a>
+                  <div class="team__description">
+                    <p>hello</p>
+                  </div>
+                </div>
+                <div class="tm__single item"><a class="tm__img" href="#" style="background-image:url(&quot;../../img/team.png&quot;);">
+                    <p class="tm__img-name">yeap</p>
+                    <p class="tm__img-position">test</p></a>
+                  <div class="team__description">
+                    <p>hello</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer"></footer>
+    <script src="js/libs.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
 </html>
-

@@ -1,0 +1,45 @@
+{% load static from staticfiles %}
+{% load widget_tweaks %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block title %}<title>{{ index.title }}</title>{% endblock title %}
+    {% block description %}<meta name="description" content="{{ index.description }}">{% endblock description %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bootstrap/3.3.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-default">
+            <h4 class="navbar-text"><a href="{% url 'home' %}">GoFriends</a></h4>
+            <ul class="nav navbar-nav">
+
+            </ul>
+            <ul class="nav navbar-nav pull-right">
+
+            </ul>
+        </nav>
+
+        {% block content %}
+
+            <p id="success"></p>
+
+          <form id="customer_form" class="form-horizontal" method="post" action="{% url 'customer_create' %}">
+              {% csrf_token %}
+                      <div style="width: 25pc">
+                      <p>{% render_field form.name class="form-control" placeholder=form.name.label %}</p>
+                      <p>{% render_field form.mail class="form-control" placeholder=form.mail.label %}</p>
+                      </div>
+                <button type="submit" class="btn btn-primary">Send</button>
+          </form>
+
+        {% endblock content %}
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="{% static "gofriends_site/js/main.js" %}"></script>
+</body>
+</html>
+
