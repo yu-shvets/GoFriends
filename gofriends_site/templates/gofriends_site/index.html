@@ -1,16 +1,18 @@
+{% load static from staticfiles %}
+
 <!DOCTYPE html>
 <html lang="en">
   <head></head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>GoFriends</title>
-  <link href="css/libs.min.css" rel="stylesheet">
-  <link href="css/main.css" rel="stylesheet">
+  <title>{{ index.title }}</title>
+  <link href="{% static "gofriends_site/css/libs.min.css" %}" rel="stylesheet">
+  <link href="{% static "gofriends_site/css/main.css" %}" rel="stylesheet">
   <body>
     <header class="header">
       <div class="header__wrapper">
-        <div class="header__row"><a class="header__logo" href="#"><img src="../../img/logo.png" alt="logo" title="logo"></a>
+        <div class="header__row"><a class="header__logo" href="{% url 'home' %}"><img src="{% static "gofriends_site/img/logo.png" %}" alt="logo" title="logo"></a>
           <nav class="nav header-nav">
             <ul class="nav__list header-list">
               <li class="nav__item nav__item_inline header-item"><a class="nav__link nav__link_primary header-link" href="#">home</a></li>
@@ -29,7 +31,7 @@
       <section class="banner"> 
         <div class="swiper-container">
           <div class="swiper-wrapper">
-            <div class="swiper-slide" style="background-image:url(&quot;../../img/slider-1.png&quot;);">
+            <div class="swiper-slide" style="background-image:url({% static "gofriends_site/img/slider-1.png" %});">
               <div class="banner__wrapper">
                 <div class="banner__container">
                   <div class="banner__row">
@@ -43,8 +45,8 @@
                 </div>
               </div>
             </div>
-            <div class="swiper-slide" style="background-image:url(&quot;../../img/slider-1.png&quot;);">2</div>
-            <div class="swiper-slide" style="background-image:url(&quot;../../img/slider-1.png&quot;);">3</div>
+            <div class="swiper-slide" style="background-image:url({% static "gofriends_site/img/slider-1.png" %});">2</div>
+            <div class="swiper-slide" style="background-image:url({% static "gofriends_site/img/slider-1.png" %});">3</div>
           </div>
           <div class="swiper-pagination"></div>
         </div>
@@ -55,23 +57,23 @@
             <h2 class="section__title-primary">Our services</h2>
             <ul class="section__list list-section list-section_services section__list_services">
               <li class="list-section__item list-section__item_inline list-section__item_services">
-                <div class="list-section__wrap"><img class="list-section__img" src="../../img/serv1.png" alt="web development"></div>
+                <div class="list-section__wrap"><img class="list-section__img" src="{% static "gofriends_site/img/serv1.png" %}" alt="web development"></div>
                 <p class="list-section__title">Web development</p>
               </li>
               <li class="list-section__item list-section__item_inline list-section__item_services">
-                <div class="list-section__wrap"><img class="list-section__img" src="../../img/serv2.png" alt="web development"></div>
+                <div class="list-section__wrap"><img class="list-section__img" src="{% static "gofriends_site/img/serv2.png" %}" alt="web development"></div>
                 <p class="list-section__title">Mobile development</p>
               </li>
               <li class="list-section__item list-section__item_inline list-section__item_services">
-                <div class="list-section__wrap"><img class="list-section__img" src="../../img/serv-3.png" alt="web development"></div>
+                <div class="list-section__wrap"><img class="list-section__img" src="{% static "gofriends_site/img/serv-3.png" %}" alt="web development"></div>
                 <p class="list-section__title">Dedicated team</p>
               </li>
               <li class="list-section__item list-section__item_inline list-section__item_services">
-                <div class="list-section__wrap"><img class="list-section__img" src="../../img/serv4.png" alt="web development"></div>
+                <div class="list-section__wrap"><img class="list-section__img" src="{% static "gofriends_site/img/serv4.png" %}" alt="web development"></div>
                 <p class="list-section__title">UI/UX Design</p>
               </li>
               <li class="list-section__item list-section__item_inline list-section__item_services">
-                <div class="list-section__wrap"><img class="list-section__img" src="../../img/serv5.png" alt="web development"></div>
+                <div class="list-section__wrap"><img class="list-section__img" src="{% static "gofriends_site/img/serv5.png" %}" alt="web development"></div>
                 <p class="list-section__title">Market</p>
               </li>
             </ul>
@@ -92,13 +94,13 @@
               <div class="cases__layout">
                 <div class="cases__header">
                   <div class="cases__settings"><span class="cases__settings-circle"></span><span class="cases__settings-circle"></span><span class="cases__settings-circle"></span></div>
-                </div><img src="../../img/ross.jpeg" alt="">
+                </div><img src="{% static "gofriends_site/img/ross.jpeg" %}" alt="">
               </div>
             </div>
             <div class="cases__single">
               <div class="cases__layout">
                 <div class="cases__header">
-                  <div class="cases__settings"><span class="cases__settings-circle"></span><span class="cases__settings-circle"></span><span class="cases__settings-circle"></span></div><img src="../../img/ross.jpeg" alt="">
+                  <div class="cases__settings"><span class="cases__settings-circle"></span><span class="cases__settings-circle"></span><span class="cases__settings-circle"></span></div><img src="{% static "gofriends_site/img/ross.jpeg" %}" alt="">
                 </div>
               </div>
               <div class="cases__description">
@@ -118,13 +120,13 @@
               <div class="cases__layout">
                 <div class="cases__header">
                   <div class="cases__settings"><span class="cases__settings-circle"></span><span class="cases__settings-circle"></span><span class="cases__settings-circle"></span></div>
-                </div><img src="../../img/ross.jpeg" alt="">
+                </div><img src="{% static "gofriends_site/img/ross.jpeg" %}" alt="">
               </div>
             </div>
             <div class="cases__single">
               <div class="cases__layout">
                 <div class="cases__header">
-                  <div class="cases__settings"><span class="cases__settings-circle"></span><span class="cases__settings-circle"></span><span class="cases__settings-circle"></span></div><img src="../../img/ross.jpeg" alt="">
+                  <div class="cases__settings"><span class="cases__settings-circle"></span><span class="cases__settings-circle"></span><span class="cases__settings-circle"></span></div><img src="{% static "gofriends_site/img/ross.jpeg" %}" alt="">
                 </div>
               </div>
               <div class="cases__description">
@@ -144,25 +146,25 @@
             <p class="activity__subtitle">GoFriendsPro Company specializes in developing of task-oriented IT solutions for healthcare, fitness and sport. Additionally, we create functional applications for various business areas, including:</p>
             <ul class="section__list list-section list-section_services section__list_activity">
               <li class="list-section__item list-section__item_inline list-section_activity">
-                <div class="list-section__wrap"><img class="list-section__img" src="../../img/activity-1t.png" alt="web development"></div><a class="list-section__title activity__link" href="#">e-commerce</a>
+                <div class="list-section__wrap"><img class="list-section__img" src="{% static "gofriends_site/img/activity-1t.png" %}" alt="web development"></div><a class="list-section__title activity__link" href="#">e-commerce</a>
               </li>
               <li class="list-section__item list-section__item_inline list-section_activity">
-                <div class="list-section__wrap"><img class="list-section__img" src="../../img/activity-2.png" alt="web development"></div><a class="list-section__title activity__link" href="#">social networking</a>
+                <div class="list-section__wrap"><img class="list-section__img" src="{% static "gofriends_site/img/activity-2.png" %}" alt="web development"></div><a class="list-section__title activity__link" href="#">social networking</a>
               </li>
               <li class="list-section__item list-section__item_inline list-section__item_services list-section_activity">
-                <div class="list-section__wrap"><img class="list-section__img" src="../../img/activity-3l.png" alt="web development"></div><a class="list-section__title activity__link" href="#">film studios</a>
+                <div class="list-section__wrap"><img class="list-section__img" src="{% static "gofriends_site/img/activity-3l.png" %}" alt="web development"></div><a class="list-section__title activity__link" href="#">film studios</a>
               </li>
               <li class="list-section__item list-section__item_inline list-section_activity">
-                <div class="list-section__wrap"><img class="list-section__img" src="../../img/activity-4.png" alt="web development"></div><a class="list-section__title activity__link" href="#">cryptocurrency exchanging</a>
+                <div class="list-section__wrap"><img class="list-section__img" src="{% static "gofriends_site/img/activity-4.png" %}" alt="web development"></div><a class="list-section__title activity__link" href="#">cryptocurrency exchanging</a>
               </li>
               <li class="list-section__item list-section__item_inline list-section_activity">
-                <div class="list-section__wrap"><img class="list-section__img" src="../../img/activity-5.png" alt="web development"></div><a class="list-section__title activity__link" href="#">restaurants</a>
+                <div class="list-section__wrap"><img class="list-section__img" src="{% static "gofriends_site/img/activity-5.png" %}" alt="web development"></div><a class="list-section__title activity__link" href="#">restaurants</a>
               </li>
               <li class="list-section__item list-section__item_inline list-section_activity">
-                <div class="list-section__wrap"><img class="list-section__img" src="../../img/activity-6.png" alt="web development"></div><a class="list-section__title activity__link" href="#">online events monitoring</a>
+                <div class="list-section__wrap"><img class="list-section__img" src="{% static "gofriends_site/img/activity-6.png" %}" alt="web development"></div><a class="list-section__title activity__link" href="#">online events monitoring</a>
               </li>
               <li class="list-section__item list-section__item_inline list-section_activity">
-                <div class="list-section__wrap"><img class="list-section__img" src="../../img/activity-7.png" alt="web development"></div><a class="list-section__title activity__link" href="#">tourism</a>
+                <div class="list-section__wrap"><img class="list-section__img" src="{% static "gofriends_site/img/activity-7.png" %}" alt="web development"></div><a class="list-section__title activity__link" href="#">tourism</a>
               </li>
             </ul>
             <p class="activity__subtitle">Quite naturally, we develop custom, task-oriented, multifunctional apps on your request, whereas these complex, comprehensive services are labor-intensive and resource-consuming.</p>
@@ -221,56 +223,56 @@
             <div class="team__wrapper">
               <div class="owl-carousel">
                       <div class="team__single item">
-                        <div class="team__avatar" style="background-image:url(&quot;../../img/team.png&quot;);"></div>
+                        <div class="team__avatar" style="background-image:url({% static "gofriends_site/img/team.png" %});"></div>
                         <div class="team__description">
                           <div class="team__name">name</div>
                           <div class="team__position">UX/UI &amp; Frontend Design</div>
                         </div>
                       </div>
                       <div class="team__single item">
-                        <div class="team__avatar" style="background-image:url(&quot;../../img/team.png&quot;);"></div>
+                        <div class="team__avatar" style="background-image:url({% static "gofriends_site/img/team.png" %});"></div>
                         <div class="team__description">
                           <div class="team__name">name</div>
                           <div class="team__position">UX/UI &amp; Frontend Design</div>
                         </div>
                       </div>
                       <div class="team__single item">
-                        <div class="team__avatar" style="background-image:url(&quot;../../img/team.png&quot;);"></div>
+                        <div class="team__avatar" style="background-image:url({% static "gofriends_site/img/team.png" %});"></div>
                         <div class="team__description">
                           <div class="team__name">name</div>
                           <div class="team__position">UX/UI &amp; Frontend Design</div>
                         </div>
                       </div>
                       <div class="team__single item">
-                        <div class="team__avatar" style="background-image:url(&quot;../../img/team.png&quot;);"></div>
+                        <div class="team__avatar" style="background-image:url({% static "gofriends_site/img/team.png" %});"></div>
                         <div class="team__description">
                           <div class="team__name">name</div>
                           <div class="team__position">UX/UI &amp; Frontend Design</div>
                         </div>
                       </div>
                       <div class="team__single item">
-                        <div class="team__avatar" style="background-image:url(&quot;../../img/team.png&quot;);"></div>
+                        <div class="team__avatar" style="background-image:url({% static "gofriends_site/img/team.png" %});"></div>
                         <div class="team__description">
                           <div class="team__name">name</div>
                           <div class="team__position">UX/UI &amp; Frontend Design</div>
                         </div>
                       </div>
                       <div class="team__single item">
-                        <div class="team__avatar" style="background-image:url(&quot;../../img/team.png&quot;);"></div>
+                        <div class="team__avatar" style="background-image:url({% static "gofriends_site/img/team.png" %});"></div>
                         <div class="team__description">
                           <div class="team__name">name</div>
                           <div class="team__position">UX/UI &amp; Frontend Design</div>
                         </div>
                       </div>
                       <div class="team__single item">
-                        <div class="team__avatar" style="background-image:url(&quot;../../img/team.png&quot;);"></div>
+                        <div class="team__avatar" style="background-image:url({% static "gofriends_site/img/team.png" %});"></div>
                         <div class="team__description">
                           <div class="team__name">name</div>
                           <div class="team__position">UX/UI &amp; Frontend Design</div>
                         </div>
                       </div>
                       <div class="team__single item">
-                        <div class="team__avatar" style="background-image:url(&quot;../../img/team.png&quot;);"></div>
+                        <div class="team__avatar" style="background-image:url({% static "gofriends_site/img/team.png" %});"></div>
                         <div class="team__description">
                           <div class="team__name">name</div>
                           <div class="team__position">UX/UI &amp; Frontend Design</div>
@@ -283,37 +285,14 @@
       </section>
       <section class="section section_dark clients">
         <div class="section__container">
-          <div class="section__row section__row_center"><img class="clients__logo" src="../../img/cl1.png"><img class="clients__logo" src="../../img/cl2.png"><img class="clients__logo" src="../../img/cl3.png"></div>
+          <div class="section__row section__row_center"><img class="clients__logo" src="{% static "gofriends_site/img/cl1.png" %}"><img class="clients__logo" src="{% static "gofriends_site/img/cl2.png" %}"><img class="clients__logo" src="{% static "gofriends_site/img/cl3.png" %}"></div>
         </div>
       </section>
-      <section class="section tm">
-        <div class="section__container">
-          <div class="section__column">
-            <h2 class="section__title-primary">Testimonial</h2>
-            <div class="tm__wrapper">
-              <div id="test">
-                <div class="tm__single item"><a class="tm__img" href="#" style="background-image:url(&quot;../../img/team.png&quot;);">
-                    <p class="tm__img-name">yeap</p>
-                    <p class="tm__img-position">test</p></a>
-                  <div class="team__description">
-                    <p>hello</p>
-                  </div>
-                </div>
-                <div class="tm__single item"><a class="tm__img" href="#" style="background-image:url(&quot;../../img/team.png&quot;);">
-                    <p class="tm__img-name">yeap</p>
-                    <p class="tm__img-position">test</p></a>
-                  <div class="team__description">
-                    <p>hello</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+
+
     </main>
     <footer class="footer"></footer>
-    <script src="js/libs.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="{% static "gofriends_site/js/libs.min.js" %}"></script>
+    <script src="{% static "gofriends_site/js/main.js" %}"></script>
   </body>
 </html>

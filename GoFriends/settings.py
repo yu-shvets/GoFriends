@@ -26,7 +26,7 @@ SECRET_KEY = '1vys%0ic&c%&m&9s^!t2%6k%kpt7b_*hgej9lpu1_@w35!z3*q'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -69,7 +69,6 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'GoFriends.context_processors.project_variables',
             ],
         },
     },
@@ -85,7 +84,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'gofriends_db',
-        'USER': 'gofriends_user',
+        'USER': 'django',
         'PASSWORD': '********',
         'HOST': 'localhost',
         'PORT': '',
@@ -130,10 +129,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = '/home/django/GoFriends/static/'
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = '/home/django/GoFriends/media/'
 
 CKEDITOR_UPLOAD_PATH = 'uploads/'
 
