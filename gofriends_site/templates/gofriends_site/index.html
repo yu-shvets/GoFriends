@@ -5,10 +5,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    {% block title %}<title>GoFriends</title>{% endblock title %}
-    {% block description %}<meta name="description" content="">{% endblock description %}
+    {% block title %}<title>{{ index.title }}</title>{% endblock title %}
+    {% block description %}<meta name="description" content="{{ index.description }}">{% endblock description %}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/bootstrap/3.3.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href=#>
 </head>
 <body>
     <div class="container">
