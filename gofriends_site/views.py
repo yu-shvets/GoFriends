@@ -21,6 +21,6 @@ class CustomerCreate(CreateView):
         response_data = {'name': '', 'mail': '', 'success': ''}
         self.obj = form.save(commit=False)
         self.obj.save()
-        response_data['success'] = 'Success!'
+        response_data['success'] = 'Your e-mail was successfully submitted!'
         return JsonResponse(response_data)
 
