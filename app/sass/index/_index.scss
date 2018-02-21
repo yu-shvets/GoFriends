@@ -42,6 +42,10 @@
   }
 }
 
+.services {
+  padding-bottom: 70px;
+}
+
 .benefits-banner {
   color: $white-color;
   @include size(2);
@@ -256,18 +260,65 @@
 /* -- TESTIMONIALS -- */
 
 .tm {
+  padding-bottom: 75px;
   &__wrapper {
     @include size(10);
+    @include col();
+    padding-top: 68px;
   }
   &__single {
-
+    &:hover {
+      box-shadow: -10px -10px 38px rgba($dark-theme-color, .15);
+    }
   }
   &__img {
     background-position: center center;
     background-size :cover;
     background-repeat: no-repeat;
+    display: block;
     position: relative;
     height: 250px;
+    &-description {
+      position: absolute;
+      left:10px;
+      bottom: 20px;
+    }
+    &-name {
+      font-weight: 600;
+      color: $white-color;
+      text-transform: capitalize;
+    }
+    &-position {
+      font-weight: 300;
+      padding-top: 5px;
+      text-transform: capitalize;
+      font-size: 16px;
+    }
+  }
+  &__description {
+    & p {
+      font-weight: 300;
+      font-size: 16px;
+    }
+    @extend .team__description;
+  }
+  .owl-dots {
+    text-align: center;
+    padding-top: 65px;
+    .active {
+      box-shadow: 0 0 0 6px rgba($dark-theme-color, .3);
+    }
+  }
+  .owl-item {
+    padding-bottom: 10px;
+  }
+  .owl-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: $dark-theme-color;
+    display: inline-block;
+    margin-right: 17px;
   }
 }
 

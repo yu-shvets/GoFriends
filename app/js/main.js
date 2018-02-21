@@ -6,14 +6,14 @@ $('document').ready(function(){
       clickable: true
     },
   });
-  $('.owl-carousel').owlCarousel({
+  $('#owl').owlCarousel({
     items: 4,
     dots: true,
     loop: true,
     margin: 30
   });
-  $('#test').owlCarousel({
-    items: 1,
+  $('#owl1').owlCarousel({
+    items: 3,
     dots: true,
     loop: true,
     margin: 30

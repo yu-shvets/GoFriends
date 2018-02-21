@@ -251,6 +251,10 @@ img {
 }
 
 .section_dark {
+  background-color: #d9d9d9;
+}
+
+.section_dark-lighten {
   background-color: #fafafa;
 }
 
@@ -528,6 +532,10 @@ img {
           box-shadow: 0 0 0 6px rgba(51, 177, 133, 0.3);
 }
 
+.services {
+  padding-bottom: 70px;
+}
+
 .benefits-banner {
   color: #fff;
   width: -webkit-calc(16.66667% - 30px);
@@ -774,7 +782,8 @@ img {
   background-size: cover;
 }
 
-.team__description {
+.team__description,
+.tm__description {
   background: #fff;
   text-align: center;
   padding-top: 20px;
@@ -841,17 +850,81 @@ img {
 
 /* -- TESTIMONIALS -- */
 
+.tm {
+  padding-bottom: 75px;
+}
+
 .tm__wrapper {
   width: -webkit-calc(83.33333% - 30px);
   width: calc(83.33333% - 30px);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  word-wrap: break-word;
+  margin-left: 15px;
+  margin-right: 15px;
+  padding-top: 68px;
+}
+
+.tm__single:hover {
+  -webkit-box-shadow: -10px -10px 38px rgba(51, 177, 133, 0.15);
+          box-shadow: -10px -10px 38px rgba(51, 177, 133, 0.15);
 }
 
 .tm__img {
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
+  display: block;
   position: relative;
   height: 250px;
+}
+
+.tm__img-description {
+  position: absolute;
+  left: 10px;
+  bottom: 20px;
+}
+
+.tm__img-name {
+  font-weight: 600;
+  color: #fff;
+  text-transform: capitalize;
+}
+
+.tm__img-position {
+  font-weight: 300;
+  padding-top: 5px;
+  text-transform: capitalize;
+  font-size: 16px;
+}
+
+.tm__description p {
+  font-weight: 300;
+  font-size: 16px;
+}
+
+.tm .owl-dots {
+  text-align: center;
+  padding-top: 65px;
+}
+
+.tm .owl-dots .active {
+  -webkit-box-shadow: 0 0 0 6px rgba(51, 177, 133, 0.3);
+          box-shadow: 0 0 0 6px rgba(51, 177, 133, 0.3);
+}
+
+.tm .owl-item {
+  padding-bottom: 10px;
+}
+
+.tm .owl-dot {
+  width: 10px;
+  height: 10px;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
+  background: #33b185;
+  display: inline-block;
+  margin-right: 17px;
 }
 
 /* -- END TESTIMONIALS -- */

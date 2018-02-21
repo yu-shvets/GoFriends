@@ -39,6 +39,9 @@
 .section {
   //--- styles for section color ---
   &_dark {
+    background-color: #d9d9d9;
+  }
+  &_dark-lighten {
     background-color: #fafafa;
   }
   //--- end style for section color ---

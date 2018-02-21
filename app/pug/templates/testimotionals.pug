@@ -6,22 +6,32 @@ mixin tm-single(name, positionm description)
     .team__description
       p= description
 
-section.section.tm
+section.section.section_dark-lighten.tm
   .section__container
     .section__column
       h2.section__title-primary Testimonial
       .tm__wrapper
-        #test
+        #owl1.owl-carousel
           .tm__single.item
             a(href="#" style='background-image:url("../../img/team.png")').tm__img
-              p.tm__img-name yeap
-              p.tm__img-position test
-            .team__description
+              .tm__img-description
+                p.tm__img-name yeap
+                p.tm__img-position test
+            .tm__description
               p hello
           .tm__single.item
             a(href="#" style='background-image:url("../../img/team.png")').tm__img
               p.tm__img-name yeap
               p.tm__img-position test
-            .team__description
+            .tm__description
               p hello
+          -var count= 0;
+          -while(count < 5)
+            .tm__single.item
+              a(href="#" style='background-image:url("../../img/team.png")').tm__img
+                p.tm__img-name yeap
+                p.tm__img-position test
+              .tm__description
+                p hello
+                -count++
           
