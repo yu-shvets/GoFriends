@@ -167,7 +167,7 @@
 .single-about {
   &__img {
     height: 350px;
-    @include size(6);
+    width: 50%;
     background-color: #828282;
     background-position: center center;
     background-size: cover;
@@ -175,7 +175,7 @@
   }
   &__description {
     display: flex;
-    @include size(6);
+    width: 50%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -323,3 +323,31 @@
 }
 
 /* -- END TESTIMONIALS -- */
+
+/* -- QUESTIONS -- */
+
+.send {
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  &__reverse {
+    @include size(11);
+    justify-content: flex-end;
+  }
+  &__subtitle {
+    padding-top: 70px;
+    font-weight: 300;
+    font-size: 16px;
+    color: #fff;
+  }
+  &__wrapper {
+    text-align: center;
+    padding-bottom: 65px;
+  }
+  &__wrap {
+    height: 100%;
+    background-color: rgba(#000, 0.55);
+  }
+}
+
+/* -- END QUESTIONS -- */
