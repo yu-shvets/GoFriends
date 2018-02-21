@@ -1,1 +1,35 @@
-footer.footer
+footer.footer.section
+  .footer__main.section_dark-lighten
+    .section__container
+      .section__row
+        .footer__logo
+          img(src="../../img/logo-dark.png", alt="logo")
+        nav.footer__menu.nav
+          h4.section__text.section__text_subtitle.section__text_theme.footer__title Pages
+          ul.nav__list.nav__list_footer
+            each smenu in ['Home', 'Case Studies', 'About us', 'Our team']
+              li.nav__item
+                a(href="#").footer__text.footer__text_hover= smenu
+        nav.footer__menu.nav
+          h4.section__text.section__text_subtitle.section__text_theme.footer__title Contacts info
+          ul.nav__list.nav__list_footer
+            each nmenu, index in ['28a Panasa Mirnogo st.', 'Kyiv, Ukraine', 'Tel. +38 063 01 01 797', 'eugeniymeo@gmail.com']
+              if(index < 2)
+                li.footer__text= nmenu
+              else if(inedex == 2) 
+                li.nav__item
+                  a(href="tel:+380630101797").footer__text.footer__text_hover= nmenu
+              else
+                li.nav__item
+                  a(href="mailto:eugeniymeo@gmail.com").footer__text.footer__text_hover= nmenu
+        .footer__social
+          .footer__social-wrap
+            h4.section__text.section__text_subtitle.section__text_theme.footer__title Contacts info
+  .footer__additional
+    .section__container
+      .section__row
+        .footer__additional-section
+          p.footer__copyright All rights reserved GoFriends &copy; 2013-2018
+        .footer__additional-section
+          p.footer__copyright.footer__copyright_policy Privacy Policy
+            
