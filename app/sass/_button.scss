@@ -1,0 +1,45 @@
+.button {
+  font-weight: 600;
+  &_shadow {
+    box-shadow: -10px 10px 38px 0px rgba(#33b185, .18);
+  }
+  &-roll {
+    overflow: hidden;
+    &_cases {
+      height: 40px;
+    }
+    &__iner {
+      transform: translate3d(0px, 0%, 0px);
+      &:hover > .button-roll__hover{
+        transform: translateY(-105%);
+      }
+    }
+    
+    &__hover {
+      transition: transform .35s,-webkit-transform .35s;
+    }
+  }
+  &_link {
+    display: inline-block;
+  }
+  &-primary {
+    padding: 15px 40px;
+    border: 2px solid $dark-theme-color;
+    display: inline-block;
+    color: $main-color;
+    border-radius: 5px;
+    right: 0;
+    position: relative;
+    bottom: 0;
+    transition: color .5s;
+    &:hover {
+      color: $main-color;
+      -webkit-font-smoothing: subpixel-antialiased;
+      right: -3px;
+      bottom: -3px;
+      box-shadow: -10px 10px 38px 0px darken(rgba(#33b185, .3), 40%);
+      text-decoration: none;
+      
+    }
+  }
+}

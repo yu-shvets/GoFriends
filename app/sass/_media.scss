@@ -1,4 +1,6 @@
 @import "index/index";
+@import "header/header";
+@import "button";
 
 @media (max-width: 1200px) {
     @import "index/index-max-1200";

@@ -1,0 +1,27 @@
+mixin tm-single(name, positionm description)
+  .tm__single
+    a.tm__img(style='background-image:url("../../img/team.png")')
+      .tm__img-name= name
+      .tm__img-position= position
+    .team__description
+      p= description
+
+section.section.tm
+  .section__container
+    .section__column
+      h2.section__title-primary Testimonial
+      .tm__wrapper
+        #test
+          .tm__single.item
+            a(href="#" style='background-image:url("../../img/team.png")').tm__img
+              p.tm__img-name yeap
+              p.tm__img-position test
+            .team__description
+              p hello
+          .tm__single.item
+            a(href="#" style='background-image:url("../../img/team.png")').tm__img
+              p.tm__img-name yeap
+              p.tm__img-position test
+            .team__description
+              p hello
+          

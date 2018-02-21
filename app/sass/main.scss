@@ -1,12 +1,152 @@
 @import "variables-functions-and-mixins";
 
-::selection { background: rgba($green-color, .5); }
-* { font-family: $main-font, Serif; }
-.container-fluid {max-width: 1920px;}
+@import 'smartgrid';
+@include reset();
+::selection { background: rgba($theme-color, .5); }
+* { font-family: $main-font; color: $main-color; font-size: 18px; }
+.container-fluid {max-width: 1920px; }
 .align-right { text-align: right; }
 .align-left { text-align: left; }
 .align-center { text-align: center; }
 
-@import 'smartgrid';
+.nav {
+  &__item {
+    &_inline {
+      display: inline-block;
+    }
+  }
+  &__link {
+    text-decoration: none;
+    &_primary {
+      color: $white-color;
+    }
+  }
+  
+}
+
+//CONTAINER
+.swiper-container {
+  width: 100%;
+  height: 100%;
+} 
+.swiper-slide {
+  background-size: cover;
+  background-position: center center;
+  height: calc(100vh - 100px);
+  /* Center slide text vertically */
+}
+
+.section {
+  //--- styles for section color ---
+  &_dark {
+    background-color: #fafafa;
+  }
+  //--- end style for section color ---
+
+  //--- Grid sections styles ---
+  &__container {
+    @include wrapper();
+  }
+  &__row {
+    @include row-flex();
+    &_center {
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  &__column {
+    @include row-flex();
+    flex-direction: column;
+    align-items: center;
+  }
+  &__small {
+    @include col();
+    @include size(10);
+    margin: 0 auto;
+  }
+  // --- End grid section styles ---
+
+  /* --- Texts styles in section */
+  &__title-primary {
+    font-family: 'Comfortaa';
+    font-size: 48px;
+    padding-top: 70px;
+  }
+  &__text {
+    &_subtitle {
+      font-family: 'Comfortaa';
+    }
+    &_theme {
+      color: $theme-color;
+    }
+    // -- Title fonts 
+    &_sub {
+      &-1 {
+        font-size: calc(22px + 1vw);
+        font-weight: 600;
+      }
+      &-2 {
+        font-size: calc(16px + 0.6vw);
+      }
+    }
+    // -- End title font-size
+    &_cases {
+      color: $dark-theme-color;
+      margin-bottom: 50px;
+    }
+  }
+  /* --- End Texts */
+  &__list {
+    &_activity {
+      @include size(8);
+    }
+    &_services {
+      @include size(12);
+    }
+  }
+}
+
+.list-section {
+  &_services {
+    display: flex;
+    @include col();
+    padding-top: 70px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  &_activity {
+    @include size(3);
+    margin-top: 58px; 
+    @include col();
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__item {
+    &_services {
+      @include size(2);
+      @include col();
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  &__title {
+    font-weight: 600;
+    padding-top: 40px;
+    font-size: calc(12px + 0.2vw);
+    margin-top: auto;
+    text-align: center;
+  }
+  &__wrap {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+
 @import 'media';
 @import "fonts";

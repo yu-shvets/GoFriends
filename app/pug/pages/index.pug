@@ -2,5 +2,75 @@ extends ../default.pug
 block pageContent
   include ../templates/header.pug
   main.main
-    
+    include ../templates/slider.pug
+    section.section.section_dark.services
+      .section__container
+        .section__column
+          h2.section__title-primary Our services
+          ul.section__list.list-section.list-section_services.section__list_services
+            li.list-section__item.list-section__item_inline.list-section__item_services
+              div.list-section__wrap
+                img(src="../../img/serv1.png", alt="web development").list-section__img
+              p.list-section__title Web development
+            li.list-section__item.list-section__item_inline.list-section__item_services
+              div.list-section__wrap
+                img(src="../../img/serv2.png", alt="web development").list-section__img
+              p.list-section__title Mobile development
+            li.list-section__item.list-section__item_inline.list-section__item_services
+              div.list-section__wrap
+                img(src="../../img/serv-3.png", alt="web development").list-section__img
+              p.list-section__title Dedicated team
+            li.list-section__item.list-section__item_inline.list-section__item_services
+              div.list-section__wrap
+                img(src="../../img/serv4.png", alt="web development").list-section__img
+              p.list-section__title UI/UX Design
+            li.list-section__item.list-section__item_inline.list-section__item_services
+              div.list-section__wrap
+                img(src="../../img/serv5.png", alt="web development").list-section__img
+              p.list-section__title Market
+    include ../templates/case.pug
+    section.section.section_dark.activity
+      .section__container
+        .section__column
+          h2.section__title-primary Our Scope of Activity
+          p.activity__subtitle GoFriendsPro Company specializes in developing of task-oriented IT solutions for healthcare, fitness and sport. Additionally, we create functional applications for various business areas, including:
+          ul.section__list.list-section.list-section_services.section__list_activity
+            li.list-section__item.list-section__item_inline.list-section_activity
+              div.list-section__wrap
+                img(src="../../img/activity-1t.png", alt="web development").list-section__img
+              a(href="#").list-section__title.activity__link e-commerce
+            li.list-section__item.list-section__item_inline.list-section_activity
+              div.list-section__wrap
+                img(src="../../img/activity-2.png", alt="web development").list-section__img
+              a(href="#").list-section__title.activity__link social networking
+            li.list-section__item.list-section__item_inline.list-section__item_services.list-section_activity
+              div.list-section__wrap
+                img(src="../../img/activity-3l.png", alt="web development").list-section__img
+              a(href="#").list-section__title.activity__link film studios
+            li.list-section__item.list-section__item_inline.list-section_activity
+              div.list-section__wrap
+                img(src="../../img/activity-4.png", alt="web development").list-section__img
+              a(href="#").list-section__title.activity__link cryptocurrency exchanging
+            li.list-section__item.list-section__item_inline.list-section_activity
+              div.list-section__wrap
+                img(src="../../img/activity-5.png", alt="web development").list-section__img
+              a(href="#").list-section__title.activity__link restaurants
+            li.list-section__item.list-section__item_inline.list-section_activity
+              div.list-section__wrap
+                img(src="../../img/activity-6.png", alt="web development").list-section__img
+              a(href="#").list-section__title.activity__link online events monitoring
+            li.list-section__item.list-section__item_inline.list-section_activity
+              div.list-section__wrap
+                img(src="../../img/activity-7.png", alt="web development").list-section__img
+              a(href="#").list-section__title.activity__link tourism
+          p.activity__subtitle Quite naturally, we develop custom, task-oriented, multifunctional apps on your request, whereas these complex, comprehensive services are labor-intensive and resource-consuming.
+    include ../templates/about.pug
+    include ../templates/team.pug
+    section.section.section_dark.clients
+      .section__container
+        .section__row.section__row_center
+          img(src='../../img/cl1.png').clients__logo
+          img(src='../../img/cl2.png').clients__logo
+          img(src='../../img/cl3.png').clients__logo
+    include ../templates/testimotionals.pug
   include ../templates/footer.pug
