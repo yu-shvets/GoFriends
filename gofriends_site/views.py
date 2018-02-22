@@ -3,6 +3,7 @@ from django.views.generic import TemplateView
 from .forms import CustomerForm
 from django.views.generic.edit import CreateView
 from django.http import JsonResponse
+from .models import Services, HomeBanners, CaseStudies, Industries, About, Testimonials
 
 
 class HomeView(TemplateView):
@@ -11,6 +12,12 @@ class HomeView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super(HomeView, self).get_context_data(**kwargs)
         context['form'] = CustomerForm
+        context['services'] = Services.objects.all()
+        context['banners'] = HomeBanners.objects.all()
+        context['cases'] = CaseStudies.objects.all()
+        context['industries'] = Industries.objects.all()
+        context['team'] = About.objects.all()
+        context['testimonials'] = Testimonials.objects.all()
         return context
 
 

@@ -1,4 +1,5 @@
 {% load static from staticfiles %}
+{% load widget_tweaks %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,7 +20,7 @@
               <li class="nav__item nav__item_inline header-item"><a class="nav__link nav__link_primary header-link" href="#">case studies</a></li>
               <li class="nav__item nav__item_inline header-item"><a class="nav__link nav__link_primary header-link" href="#">services</a></li>
               <li class="nav__item nav__item_inline header-item"><a class="nav__link nav__link_primary header-link" href="#">industries</a></li>
-              <li class="nav__item nav__item_inline header-item"><a class="nav__link nav__link_primary header-link" href="#">technolgies</a></li>
+              <li class="nav__item nav__item_inline header-item"><a class="nav__link nav__link_primary header-link" href="#">technologies</a></li>
               <li class="nav__item nav__item_inline header-item"><a class="nav__link nav__link_primary header-link" href="#">about us</a></li>
               <li class="nav__item nav__item_inline header-item"><a class="nav__link nav__link_primary header-link" href="#">contacts</a></li>
             </ul>
@@ -45,8 +46,8 @@
                 </div>
               </div>
             </div>
-            <div class="swiper-slide" style="background-image:url({% static "gofriends_site/img/slider-1.png" %});">2</div>
-            <div class="swiper-slide" style="background-image:url({% static "gofriends_site/img/slider-1.png" %});">3</div>
+            <div class="swiper-slide" style="background-image:url({% static "gofriends_site/img/slider-1.png" %});"></div>
+            <div class="swiper-slide" style="background-image:url({% static "gofriends_site/img/slider-1.png" %});"></div>
           </div>
           <div class="swiper-pagination"></div>
         </div>
@@ -56,26 +57,12 @@
           <div class="section__column">
             <h2 class="section__title-primary">Our services</h2>
             <ul class="section__list list-section list-section_services section__list_services">
-              <li class="list-section__item list-section__item_inline list-section__item_services">
-                <div class="list-section__wrap"><img class="list-section__img" src="{% static "gofriends_site/img/serv1.png" %}" alt="web development"></div>
-                <p class="list-section__title">Web development</p>
+              {% for item in services %}
+                <li class="list-section__item list-section__item_inline list-section__item_services">
+                <div class="list-section__wrap"><img class="list-section__img" src="{{ item.icon.url }}" alt="web development"></div>
+                <p class="list-section__title">{{ item.title }}</p>
               </li>
-              <li class="list-section__item list-section__item_inline list-section__item_services">
-                <div class="list-section__wrap"><img class="list-section__img" src="{% static "gofriends_site/img/serv2.png" %}" alt="web development"></div>
-                <p class="list-section__title">Mobile development</p>
-              </li>
-              <li class="list-section__item list-section__item_inline list-section__item_services">
-                <div class="list-section__wrap"><img class="list-section__img" src="{% static "gofriends_site/img/serv-3.png" %}" alt="web development"></div>
-                <p class="list-section__title">Dedicated team</p>
-              </li>
-              <li class="list-section__item list-section__item_inline list-section__item_services">
-                <div class="list-section__wrap"><img class="list-section__img" src="{% static "gofriends_site/img/serv4.png" %}" alt="web development"></div>
-                <p class="list-section__title">UI/UX Design</p>
-              </li>
-              <li class="list-section__item list-section__item_inline list-section__item_services">
-                <div class="list-section__wrap"><img class="list-section__img" src="{% static "gofriends_site/img/serv5.png" %}" alt="web development"></div>
-                <p class="list-section__title">Market</p>
-              </li>
+              {% endfor %}
             </ul>
           </div>
         </div>
@@ -84,58 +71,38 @@
         <div class="section__container">
           <div class="section__column">
             <h2 class="section__title-primary">Case studies</h2>
+            {% for item in cases %}
+                {% if forloop.counter|divisibleby:2 %}
             <div class="cases__single">
+              <div class="cases__layout">
+                <div class="cases__header">
+                  <div class="cases__settings"><span class="cases__settings-circle"></span><span class="cases__settings-circle"></span><span class="cases__settings-circle"></span></div>
+                </div><img src="{{ item.title_image.url }}" alt="">
+              </div>
               <div class="cases__description">
-                <h3 class="section__text section__text_sub-1 section__text_cases">Gofriends Marketplace</h3>
-                <p class="section__text section__text_sub-2">GoFriends Marketplace – excellent software solutions.</p>
-                <p class="mt-20">We help business by creating our products: convenient and easy to use, beautifully designed. Inspired to help business become outstanding.</p>
+                <h3 class="section__text section__text_sub-1 section__text_cases">{{ item.title }}</h3>
+                <p class="section__text section__text_sub-2">{{ item.short_description }}</p>
+                <p class="mt-20">{{ item.description|safe }}</p>
+                <div><a class="button-primary button button_shadow cases__button" href="#">Explore more</a></div>
+              </div>
+            </div>
+                {% else %}
+                <div class="cases__single">
+              <div class="cases__description">
+                <h3 class="section__text section__text_sub-1 section__text_cases">{{ item.title }}</h3>
+                <p class="section__text section__text_sub-2">{{ item.short_description }}</p>
+                <p class="mt-20">{{ item.description|safe }}</p>
                 <div><a class="button-primary button button_shadow cases__button" href="#">Explore more</a></div>
               </div>
               <div class="cases__layout">
                 <div class="cases__header">
                   <div class="cases__settings"><span class="cases__settings-circle"></span><span class="cases__settings-circle"></span><span class="cases__settings-circle"></span></div>
-                </div><img src="{% static "gofriends_site/img/ross.jpeg" %}" alt="">
+                </div><img src="{{ item.title_image.url }}" alt="">
               </div>
             </div>
-            <div class="cases__single">
-              <div class="cases__layout">
-                <div class="cases__header">
-                  <div class="cases__settings"><span class="cases__settings-circle"></span><span class="cases__settings-circle"></span><span class="cases__settings-circle"></span></div><img src="{% static "gofriends_site/img/ross.jpeg" %}" alt="">
-                </div>
-              </div>
-              <div class="cases__description">
-                <h3 class="section__text section__text_sub-1 section__text_cases">Gofriends Marketplace</h3>
-                <p class="section__text section__text_sub-2">GoFriends Marketplace – excellent software solutions.</p>
-                <p class="mt-20">We help business by creating our products: convenient and easy to use, beautifully designed. Inspired to help business become outstanding.</p>
-                <div><a class="button-primary button button_shadow cases__button" href="#">Explore more</a></div>
-              </div>
-            </div>
-            <div class="cases__single">
-              <div class="cases__description">
-                <h3 class="section__text section__text_sub-1 section__text_cases">Gofriends Marketplace</h3>
-                <p class="section__text section__text_sub-2">GoFriends Marketplace – excellent software solutions.</p>
-                <p class="mt-20">We help business by creating our products: convenient and easy to use, beautifully designed. Inspired to help business become outstanding.</p>
-                <div><a class="button-primary button button_shadow cases__button" href="#">Explore more</a></div>
-              </div>
-              <div class="cases__layout">
-                <div class="cases__header">
-                  <div class="cases__settings"><span class="cases__settings-circle"></span><span class="cases__settings-circle"></span><span class="cases__settings-circle"></span></div>
-                </div><img src="{% static "gofriends_site/img/ross.jpeg" %}" alt="">
-              </div>
-            </div>
-            <div class="cases__single">
-              <div class="cases__layout">
-                <div class="cases__header">
-                  <div class="cases__settings"><span class="cases__settings-circle"></span><span class="cases__settings-circle"></span><span class="cases__settings-circle"></span></div><img src="{% static "gofriends_site/img/ross.jpeg" %}" alt="">
-                </div>
-              </div>
-              <div class="cases__description">
-                <h3 class="section__text section__text_sub-1 section__text_cases">Gofriends Marketplace</h3>
-                <p class="section__text section__text_sub-2">GoFriends Marketplace – excellent software solutions.</p>
-                <p class="mt-20">We help business by creating our products: convenient and easy to use, beautifully designed. Inspired to help business become outstanding.</p>
-                <div><a class="button-primary button button_shadow cases__button" href="#">Explore more</a></div>
-              </div>
-            </div><a class="button-primary button button_shadow cases__button" href="#">View all cases</a>
+                {% endif %}
+            {% endfor %}
+            <a class="button-primary button button_shadow cases__button" href="#">View all cases</a>
           </div>
         </div>
       </section>
@@ -145,27 +112,11 @@
             <h2 class="section__title-primary">Our Scope of Activity</h2>
             <p class="activity__subtitle">GoFriendsPro Company specializes in developing of task-oriented IT solutions for healthcare, fitness and sport. Additionally, we create functional applications for various business areas, including:</p>
             <ul class="section__list list-section list-section_services section__list_activity">
+                {% for item in industries %}
               <li class="list-section__item list-section__item_inline list-section_activity">
-                <div class="list-section__wrap"><img class="list-section__img" src="{% static "gofriends_site/img/activity-1t.png" %}" alt="web development"></div><a class="list-section__title activity__link" href="#">e-commerce</a>
+                <div class="list-section__wrap"><img class="list-section__img" src="{{ item.icon.url }}" alt="web development"></div><a class="list-section__title activity__link" href="#">{{ item.title }}</a>
               </li>
-              <li class="list-section__item list-section__item_inline list-section_activity">
-                <div class="list-section__wrap"><img class="list-section__img" src="{% static "gofriends_site/img/activity-2.png" %}" alt="web development"></div><a class="list-section__title activity__link" href="#">social networking</a>
-              </li>
-              <li class="list-section__item list-section__item_inline list-section__item_services list-section_activity">
-                <div class="list-section__wrap"><img class="list-section__img" src="{% static "gofriends_site/img/activity-3l.png" %}" alt="web development"></div><a class="list-section__title activity__link" href="#">film studios</a>
-              </li>
-              <li class="list-section__item list-section__item_inline list-section_activity">
-                <div class="list-section__wrap"><img class="list-section__img" src="{% static "gofriends_site/img/activity-4.png" %}" alt="web development"></div><a class="list-section__title activity__link" href="#">cryptocurrency exchanging</a>
-              </li>
-              <li class="list-section__item list-section__item_inline list-section_activity">
-                <div class="list-section__wrap"><img class="list-section__img" src="{% static "gofriends_site/img/activity-5.png" %}" alt="web development"></div><a class="list-section__title activity__link" href="#">restaurants</a>
-              </li>
-              <li class="list-section__item list-section__item_inline list-section_activity">
-                <div class="list-section__wrap"><img class="list-section__img" src="{% static "gofriends_site/img/activity-6.png" %}" alt="web development"></div><a class="list-section__title activity__link" href="#">online events monitoring</a>
-              </li>
-              <li class="list-section__item list-section__item_inline list-section_activity">
-                <div class="list-section__wrap"><img class="list-section__img" src="{% static "gofriends_site/img/activity-7.png" %}" alt="web development"></div><a class="list-section__title activity__link" href="#">tourism</a>
-              </li>
+                {% endfor %}
             </ul>
             <p class="activity__subtitle">Quite naturally, we develop custom, task-oriented, multifunctional apps on your request, whereas these complex, comprehensive services are labor-intensive and resource-consuming.</p>
           </div>
@@ -221,62 +172,16 @@
           <div class="section__column">
             <h2 class="section__title-primary">Our Team</h2>
             <div class="team__wrapper">
-              <div class="owl-carousel">
+              <div class="owl-carousel" id="owl">
+                      {% for item in team %}
                       <div class="team__single item">
-                        <div class="team__avatar" style="background-image:url({% static "gofriends_site/img/team.png" %});"></div>
+                        <div class="team__avatar" style="background-image:url({{ item.photo.url }});"></div>
                         <div class="team__description">
-                          <div class="team__name">name</div>
-                          <div class="team__position">UX/UI &amp; Frontend Design</div>
+                          <div class="team__name">{{ item.name }}</div>
+                          <div class="team__position">{{ item.position }}</div>
                         </div>
                       </div>
-                      <div class="team__single item">
-                        <div class="team__avatar" style="background-image:url({% static "gofriends_site/img/team.png" %});"></div>
-                        <div class="team__description">
-                          <div class="team__name">name</div>
-                          <div class="team__position">UX/UI &amp; Frontend Design</div>
-                        </div>
-                      </div>
-                      <div class="team__single item">
-                        <div class="team__avatar" style="background-image:url({% static "gofriends_site/img/team.png" %});"></div>
-                        <div class="team__description">
-                          <div class="team__name">name</div>
-                          <div class="team__position">UX/UI &amp; Frontend Design</div>
-                        </div>
-                      </div>
-                      <div class="team__single item">
-                        <div class="team__avatar" style="background-image:url({% static "gofriends_site/img/team.png" %});"></div>
-                        <div class="team__description">
-                          <div class="team__name">name</div>
-                          <div class="team__position">UX/UI &amp; Frontend Design</div>
-                        </div>
-                      </div>
-                      <div class="team__single item">
-                        <div class="team__avatar" style="background-image:url({% static "gofriends_site/img/team.png" %});"></div>
-                        <div class="team__description">
-                          <div class="team__name">name</div>
-                          <div class="team__position">UX/UI &amp; Frontend Design</div>
-                        </div>
-                      </div>
-                      <div class="team__single item">
-                        <div class="team__avatar" style="background-image:url({% static "gofriends_site/img/team.png" %});"></div>
-                        <div class="team__description">
-                          <div class="team__name">name</div>
-                          <div class="team__position">UX/UI &amp; Frontend Design</div>
-                        </div>
-                      </div>
-                      <div class="team__single item">
-                        <div class="team__avatar" style="background-image:url({% static "gofriends_site/img/team.png" %});"></div>
-                        <div class="team__description">
-                          <div class="team__name">name</div>
-                          <div class="team__position">UX/UI &amp; Frontend Design</div>
-                        </div>
-                      </div>
-                      <div class="team__single item">
-                        <div class="team__avatar" style="background-image:url({% static "gofriends_site/img/team.png" %});"></div>
-                        <div class="team__description">
-                          <div class="team__name">name</div>
-                          <div class="team__position">UX/UI &amp; Frontend Design</div>
-                        </div>
+                      {% endfor %}
                       </div>
               </div>
             </div>
@@ -289,9 +194,93 @@
         </div>
       </section>
 
-
+      <section class="section section_dark-lighten tm">
+        <div class="section__container">
+          <div class="section__column">
+            <h2 class="section__title-primary">Testimonial</h2>
+            <div class="tm__wrapper">
+              <div class="owl-carousel" id="owl1">
+                  {% for item in testimonials %}
+                  <div class="tm__single item"><a class="tm__img" href="#" style="background-image:url({{ item.photo.url }});">
+                    <div class="tm__img-description">
+                      <p class="tm__img-name">{{ item.name }}</p>
+                      <p class="tm__img-position">{{ item.position }}</p>
+                    </div></a>
+                  <div class="tm__description">
+                    <p>hello</p>
+                  </div>
+                </div>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+          </div>
+      </section>
+      <section class="section send" style="background-image:url({% static "gofriends_site/img/covex.png" %});">
+        <div class="send__wrap">
+          <div class="section__container">
+            <div class="section__row send__reverse">
+              <div class="send__wrapper">
+                <h3 class="h3 section__text section__text_dark-theme section__text_sub-2 section__text_subtitle">Any questions?</h3>
+                <p class="send__subtitle"> Please, fill out the form and we will contact you as soon as possible</p>
+                    <form id="customer_form" class="form form_send" method="post" action="{% url 'customer_create' %}">
+                        {% csrf_token %}
+                        <p id="success" style="color: white"></p>
+                      {% render_field form.name class="form__field form__field_question form__field_single" placeholder="Your Name" %}
+                      {% render_field form.mail class="form__field form__field_question form__field_single" placeholder="Your Email" %}
+                      <button type="submit" class="button-send">Send</button>
+                    </form>
+                </div>
+              </div>
+            </div>
+          </div>
+      </section>
     </main>
-    <footer class="footer"></footer>
+    <footer class="footer section">
+      <div class="footer__main section_dark-lighten">
+        <div class="section__container">
+          <div class="section__row">
+            <div class="footer__logo"><img src="{% static "gofriends_site/img/logo-dark.png" %}" alt="logo"></div>
+            <nav class="footer__menu nav">
+              <h4 class="section__text section__text_subtitle section__text_theme footer__title">Pages</h4>
+              <ul class="nav__list nav__list_footer">
+                <li class="nav__item"><a class="footer__text footer__text_hover" href="#">Home</a></li>
+                <li class="nav__item"><a class="footer__text footer__text_hover" href="#">Case Studies</a></li>
+                <li class="nav__item"><a class="footer__text footer__text_hover" href="#">About us</a></li>
+                <li class="nav__item"><a class="footer__text footer__text_hover" href="#">Our team</a></li>
+              </ul>
+            </nav>
+            <nav class="footer__menu nav">
+              <h4 class="section__text section__text_subtitle section__text_theme footer__title">Contacts info</h4>
+              <ul class="nav__list nav__list_footer">
+                <li class="footer__text">28a Panasa Mirnogo st.</li>
+                <li class="footer__text">Kyiv, Ukraine</li>
+                <li class="nav__item"><a class="footer__text footer__text_hover" href="mailto:eugeniymeo@gmail.com">Tel. +38 063 01 01 797</a></li>
+                <li class="nav__item"><a class="footer__text footer__text_hover" href="mailto:eugeniymeo@gmail.com">eugeniymeo@gmail.com</a></li>
+              </ul>
+            </nav>
+            <div class="footer__social">
+              <div class="footer__social-wrap">
+                <h4 class="section__text section__text_subtitle section__text_theme footer__title">Contacts info</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer__additional">
+        <div class="section__container">
+          <div class="section__row">
+            <div class="footer__additional-section">
+              <p class="footer__copyright">All rights reserved GoFriends &copy; 2013-2018</p>
+            </div>
+            <div class="footer__additional-section">
+              <p class="footer__copyright footer__copyright_policy">Privacy Policy</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
     <script src="{% static "gofriends_site/js/libs.min.js" %}"></script>
     <script src="{% static "gofriends_site/js/main.js" %}"></script>
   </body>

@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import CaseStudies, Services, Technologies, Industries, About, Contacts, Customers, MetaTags
+from .models import CaseStudies, Services, Technologies, Industries, About, \
+    Contacts, Customers, MetaTags, HomeBanners, Testimonials
 from nested_inline.admin import NestedStackedInline, NestedModelAdmin
 
 
@@ -11,6 +12,8 @@ admin.site.register(About)
 admin.site.register(Contacts)
 admin.site.register(Customers)
 admin.site.register(MetaTags)
+admin.site.register(HomeBanners)
+admin.site.register(Testimonials)
 
 
 

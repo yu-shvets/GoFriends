@@ -14,6 +14,18 @@ class CommonInfo(models.Model):
     updated = models.DateTimeField(auto_now=True)
 
 
+class HomeBanners(CommonInfo):
+
+    class Meta(CommonInfo.Meta):
+        verbose_name = "Home banner"
+        verbose_name_plural = "Home banners"
+
+    banner = models.ImageField(upload_to='banners')
+
+    def __str__(self):
+        return "{}".format(self.banner)
+
+
 class CaseStudies(CommonInfo):
 
     class Meta(CommonInfo.Meta):
@@ -21,7 +33,7 @@ class CaseStudies(CommonInfo):
         verbose_name_plural = "1. Case Studies"
 
     title = models.CharField(max_length=256)
-    title_image = models.ImageField(blank=True, null=True, upload_to='images', verbose_name='title image')
+    title_image = models.ImageField(blank=True, null=True, upload_to='case_studies', verbose_name='title image')
     short_description = models.CharField(blank=True, null=True, max_length=256)
     description = RichTextUploadingField(blank=True, null=True, verbose_name='description')
     url_field = models.URLField(blank=True, null=True, verbose_name='URL')
@@ -35,9 +47,11 @@ class Services(CommonInfo):
     class Meta(CommonInfo.Meta):
         verbose_name = "Service"
         verbose_name_plural = "2. Services"
+        ordering = ['created']
 
     title = models.CharField(max_length=256)
-    title_image = models.ImageField(blank=True, null=True, upload_to='images', verbose_name='title image')
+    icon = models.ImageField(blank=True, null=True, upload_to='services/icons')
+    title_image = models.ImageField(blank=True, null=True, upload_to='services/images', verbose_name='title image')
     short_description = models.CharField(blank=True, null=True, max_length=256)
     description = RichTextUploadingField(blank=True, null=True, verbose_name='description')
 
@@ -50,9 +64,11 @@ class Industries(CommonInfo):
     class Meta(CommonInfo.Meta):
         verbose_name = "Industry"
         verbose_name_plural = "3. Industries"
+        ordering = ['created']
 
     title = models.CharField(max_length=256)
-    title_image = models.ImageField(blank=True, null=True, upload_to='images', verbose_name='title image')
+    icon = models.ImageField(blank=True, null=True, upload_to='industries/icons')
+    title_image = models.ImageField(blank=True, null=True, upload_to='industries/images', verbose_name='title image')
     short_description = models.CharField(blank=True, null=True, max_length=256)
     description = RichTextUploadingField(blank=True, null=True, verbose_name='description')
 
@@ -67,7 +83,7 @@ class Technologies(CommonInfo):
         verbose_name_plural = "4. Technologies"
 
     title = models.CharField(max_length=256)
-    title_image = models.ImageField(blank=True, null=True, upload_to='images', verbose_name='title image')
+    title_image = models.ImageField(blank=True, null=True, upload_to='technologies/images', verbose_name='title image')
     short_description = models.CharField(blank=True, null=True, max_length=256)
     description = RichTextUploadingField(blank=True, null=True, verbose_name='description')
 
@@ -84,6 +100,22 @@ class About(models.Model):
     name = models.CharField(max_length=256)
     position = models.CharField(max_length=256)
     photo = models.ImageField(upload_to='team/photos')
+    description = RichTextUploadingField(blank=True, null=True)
+
+    def __str__(self):
+        return "{}".format(self.name)
+
+
+class Testimonials(models.Model):
+
+    class Meta:
+        verbose_name = "Testimonial"
+        verbose_name_plural = "Testimonials"
+
+    name = models.CharField(max_length=256)
+    position = models.CharField(max_length=256, blank=True, null=True)
+    company = models.CharField(max_length=256, blank=True, null=True)
+    photo = models.ImageField(upload_to='testimonials/photos')
     description = RichTextUploadingField(blank=True, null=True)
 
     def __str__(self):
