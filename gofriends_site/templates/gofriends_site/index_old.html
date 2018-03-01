@@ -3,44 +3,285 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    {% block title %}<title>{{ index.title }}</title>{% endblock title %}
-    {% block description %}
-        <meta name="description" content="{{ index.description }}">{% endblock description %}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bootstrap/3.3.0/css/bootstrap.min.css">
-</head>
-<body>
-<div class="container">
-    <nav class="navbar navbar-default">
-        <h4 class="navbar-text"><a href="{% url 'home' %}">GoFriends</a></h4>
-        <ul class="nav navbar-nav">
-
-        </ul>
-        <ul class="nav navbar-nav pull-right">
-
-        </ul>
-    </nav>
-
-    {% block content %}
-
-        <p id="success"></p>
-
-        <form id="customer_form" class="form-horizontal" method="post" action="{% url 'customer_create' %}">
-            {% csrf_token %}
-            <div style="width: 25pc">
-                <p>{% render_field form.name class="form-control" placeholder=form.name.label %}</p>
-                <p>{% render_field form.mail class="form-control" placeholder=form.mail.label %}</p>
+  <head></head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>{{ index.title }}</title>
+  <link href="{% static "gofriends_site/css/libs.min.css" %}" rel="stylesheet">
+  <link href="{% static "gofriends_site/css/main.css" %}" rel="stylesheet">
+  <body>
+    <header class="header">
+      <div class="header__wrapper">
+        <div class="header__row"><a class="header__logo" href="{% url 'home' %}"><img src="{% static "gofriends_site/img/logo.png" %}" alt="logo" title="logo"></a>
+          <nav class="nav header-nav">
+            <ul class="nav__list header-list">
+              <li class="nav__item nav__item_inline header-item"><a class="nav__link nav__link_primary header-link" href="#">home</a></li>
+              <li class="nav__item nav__item_inline header-item"><a class="nav__link nav__link_primary header-link" href="#">case studies</a></li>
+              <li class="nav__item nav__item_inline header-item"><a class="nav__link nav__link_primary header-link" href="{% url 'web_development' %}">services</a></li>
+              <li class="nav__item nav__item_inline header-item"><a class="nav__link nav__link_primary header-link" href="#">industries</a></li>
+              <li class="nav__item nav__item_inline header-item"><a class="nav__link nav__link_primary header-link" href="#">technologies</a></li>
+              <li class="nav__item nav__item_inline header-item"><a class="nav__link nav__link_primary header-link" href="#">about us</a></li>
+              <li class="nav__item nav__item_inline header-item"><a class="nav__link nav__link_primary header-link" href="#">contacts</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <section class="banner"> 
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide" style="background-image:url({% static "gofriends_site/img/slider-1.png" %});">
+              <div class="banner__wrapper">
+                <div class="banner__container">
+                  <div class="banner__row">
+                    <p class="banner__title">development design marketing</p>
+                    <div class="banner__benefits benefits-banner">
+                      <p class="benefits-banner__title"> <span class="benefits-banner__bold">21</span><br>people in the team</p>
+                      <p class="benefits-banner__title"> <span class="benefits-banner__bold">150+</span><br>projects delivered</p>
+                      <p class="benefits-banner__title"><span class="benefits-banner__bold">5+</span><br>years of expirience</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <button type="submit" class="btn btn-primary">Send</button>
-        </form>
+            <div class="swiper-slide" style="background-image:url({% static "gofriends_site/img/slider-1.png" %});"></div>
+            <div class="swiper-slide" style="background-image:url({% static "gofriends_site/img/slider-1.png" %});"></div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </section>
+      <section class="section section_dark services">
+        <div class="section__container">
+          <div class="section__column">
+            <h2 class="section__title-primary">Our services</h2>
+            <ul class="section__list list-section list-section_services section__list_services">
+              {% for item in services %}
+                <li class="list-section__item list-section__item_inline list-section__item_services">
+                <div class="list-section__wrap"><img class="list-section__img" src="{{ item.icon.url }}" alt="web development"></div>
+                <p class="list-section__title">{{ item.title }}</p>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="section cases">
+        <div class="section__container">
+          <div class="section__column">
+            <h2 class="section__title-primary">Case studies</h2>
+            {% for item in cases %}
+                {% if forloop.counter|divisibleby:2 %}
+            <div class="cases__single">
+              <div class="cases__layout">
+                <div class="cases__header">
+                  <div class="cases__settings"><span class="cases__settings-circle"></span><span class="cases__settings-circle"></span><span class="cases__settings-circle"></span></div>
+                </div><img src="{{ item.title_image.url }}" alt="">
+              </div>
+              <div class="cases__description">
+                <h3 class="section__text section__text_sub-1 section__text_cases">{{ item.title }}</h3>
+                <p class="section__text section__text_sub-2">{{ item.short_description }}</p>
+                <p class="mt-20">{{ item.description|safe }}</p>
+                <div><a class="button-primary button button_shadow cases__button" href="#">Explore more</a></div>
+              </div>
+            </div>
+                {% else %}
+                <div class="cases__single">
+              <div class="cases__description">
+                <h3 class="section__text section__text_sub-1 section__text_cases">{{ item.title }}</h3>
+                <p class="section__text section__text_sub-2">{{ item.short_description }}</p>
+                <p class="mt-20">{{ item.description|safe }}</p>
+                <div><a class="button-primary button button_shadow cases__button" href="#">Explore more</a></div>
+              </div>
+              <div class="cases__layout">
+                <div class="cases__header">
+                  <div class="cases__settings"><span class="cases__settings-circle"></span><span class="cases__settings-circle"></span><span class="cases__settings-circle"></span></div>
+                </div><img src="{{ item.title_image.url }}" alt="">
+              </div>
+            </div>
+                {% endif %}
+            {% endfor %}
+            <a class="button-primary button button_shadow cases__button" href="#">View all cases</a>
+          </div>
+        </div>
+      </section>
+      <section class="section section_dark activity">
+        <div class="section__container">
+          <div class="section__column">
+            <h2 class="section__title-primary">Our Scope of Activity</h2>
+            <p class="activity__subtitle">GoFriendsPro Company specializes in developing of task-oriented IT solutions for healthcare, fitness and sport. Additionally, we create functional applications for various business areas, including:</p>
+            <ul class="section__list list-section list-section_services section__list_activity">
+                {% for item in industries %}
+              <li class="list-section__item list-section__item_inline list-section_activity">
+                <div class="list-section__wrap"><img class="list-section__img" src="{{ item.icon.url }}" alt="web development"></div><a class="list-section__title activity__link" href="#">{{ item.title }}</a>
+              </li>
+                {% endfor %}
+            </ul>
+            <p class="activity__subtitle">Quite naturally, we develop custom, task-oriented, multifunctional apps on your request, whereas these complex, comprehensive services are labor-intensive and resource-consuming.</p>
+          </div>
+        </div>
+      </section>
+      <section class="section about">
+        <div class="section__container">
+          <div class="section__column">
+            <h2 class="section__title-primary">About us</h2>
+            <p class="mt-10">GofriendsPro: Your Pass to Success</p>
+          </div>
+        </div>
+        <div class="about__single single-about mt-60">
+          <div class="single-about__img" style="background-image: url();"></div>
+          <div class="single-about__description">
+            <div class="single-about__wrapper">
+              <h3 class="section__text section__text_theme section__text_sub-2 section__text_subtitle">Go Friends is a professional, fast-growing software development agency.    </h3>
+              <p class="mt-20">
+                Our team of young, competent and creative professionals:
+                strategists, front-end and back-end developers, 
+                UI/UX designers, SEO and marketing experts, testing & quality assurance (QA) engineers, is well-coordinated and 
+                success-oriented.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="about__single single-about">
+          <div class="single-about__description">
+            <div class="single-about__wrapper"> 
+              <p class="mt-20"><span class="section__text_theme">We provide </span>comprehensive, full-cycle development 
+                services for our valued customers, being friendly and 
+                client-oriented.
+              </p>
+            </div>
+          </div>
+          <div class="single-about__img" style="background-image: url();"></div>
+        </div>
+              <div class="about__single single-about">
+                <div class="single-about__img" style="background-image: url();"></div>
+                <div class="single-about__description">
+                  <div class="single-about__wrapper"> <span class="section__text_theme">We focus </span><span> on the project’s purposes and your requirements, creating outstanding functionality and design of every software solution. Our developers are well-versed in the most advanced and efficient technologies and programming languages such as PHP, Python, Django, Node JS.</span></div>
+                </div>
+              </div>
+              <div class="about__single single-about">
+                <div class="single-about__description">
+                  <div class="single-about__wrapper"> <span class="section__text_theme">Nowadays </span><span>we are expanding to the global markets, including the USA and Europe. We help our outsourcing customers with websites development and promotion, CRM and ERP applications building.</span></div>
+                </div>
+                <div class="single-about__img" style="background-image: url();"></div>
+              </div>
+      </section>
+      <section class="section section_dark team">
+        <div class="section__container">
+          <div class="section__column">
+            <h2 class="section__title-primary">Our Team</h2>
+            <div class="team__wrapper">
+              <div class="owl-carousel" id="owl">
+                      {% for item in team %}
+                      <div class="team__single item">
+                        <div class="team__avatar" style="background-image:url({{ item.photo.url }});"></div>
+                        <div class="team__description">
+                          <div class="team__name">{{ item.name }}</div>
+                          <div class="team__position">{{ item.position }}</div>
+                        </div>
+                      </div>
+                      {% endfor %}
+                      </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section section_dark clients">
+        <div class="section__container">
+          <div class="section__row section__row_center"><img class="clients__logo" src="{% static "gofriends_site/img/cl1.png" %}"><img class="clients__logo" src="{% static "gofriends_site/img/cl2.png" %}"><img class="clients__logo" src="{% static "gofriends_site/img/cl3.png" %}"></div>
+        </div>
+      </section>
 
-    {% endblock content %}
+      <section class="section section_dark-lighten tm">
+        <div class="section__container">
+          <div class="section__column">
+            <h2 class="section__title-primary">Testimonial</h2>
+            <div class="tm__wrapper">
+              <div class="owl-carousel" id="owl1">
+                  {% for item in testimonials %}
+                  <div class="tm__single item"><a class="tm__img" href="#" style="background-image:url({{ item.photo.url }});">
+                    <div class="tm__img-description">
+                      <p class="tm__img-name">{{ item.name }}</p>
+                      <p class="tm__img-position">{{ item.position }}</p>
+                    </div></a>
+                  <div class="tm__description">
+                    <p>hello</p>
+                  </div>
+                </div>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+          </div>
+      </section>
+      <section class="section send" style="background-image:url({% static "gofriends_site/img/covex.png" %});">
+        <div class="send__wrap">
+          <div class="section__container">
+            <div class="section__row send__reverse">
+              <div class="send__wrapper">
+                <h3 class="h3 section__text section__text_dark-theme section__text_sub-2 section__text_subtitle">Any questions?</h3>
+                <p class="send__subtitle"> Please, fill out the form and we will contact you as soon as possible</p>
+                    <form id="customer_form" class="form form_send" method="post" action="{% url 'customer_create' %}">
+                        {% csrf_token %}
+                        <p id="success" style="color: white"></p>
+                      {% render_field form.name class="form__field form__field_question form__field_single" placeholder="Your Name" %}
+                      {% render_field form.mail class="form__field form__field_question form__field_single" placeholder="Your Email" %}
+                      <button type="submit" class="button-send">Send</button>
+                    </form>
+                </div>
+              </div>
+            </div>
+          </div>
+      </section>
+    </main>
+    <footer class="footer section">
+      <div class="footer__main section_dark-lighten">
+        <div class="section__container">
+          <div class="section__row">
+            <div class="footer__logo"><img src="{% static "gofriends_site/img/logo-dark.png" %}" alt="logo"></div>
+            <nav class="footer__menu nav">
+              <h4 class="section__text section__text_subtitle section__text_theme footer__title">Pages</h4>
+              <ul class="nav__list nav__list_footer">
+                <li class="nav__item"><a class="footer__text footer__text_hover" href="#">Home</a></li>
+                <li class="nav__item"><a class="footer__text footer__text_hover" href="#">Case Studies</a></li>
+                <li class="nav__item"><a class="footer__text footer__text_hover" href="#">About us</a></li>
+                <li class="nav__item"><a class="footer__text footer__text_hover" href="#">Our team</a></li>
+              </ul>
+            </nav>
+            <nav class="footer__menu nav">
+              <h4 class="section__text section__text_subtitle section__text_theme footer__title">Contacts</h4>
+              <ul class="nav__list nav__list_footer">
+                <li class="footer__text">28a Panasa Mirnogo st.</li>
+                <li class="footer__text">Kyiv, Ukraine</li>
+                <li class="nav__item"><a class="footer__text footer__text_hover" href="mailto:eugeniymeo@gmail.com">Tel. +38 063 01 01 797</a></li>
+                <li class="nav__item"><a class="footer__text footer__text_hover" href="mailto:eugeniymeo@gmail.com">eugeniymeo@gmail.com</a></li>
+              </ul>
+            </nav>
+            <div class="footer__social">
+              <div class="footer__social-wrap">
+                <h4 class="section__text section__text_subtitle section__text_theme footer__title">Contacts</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer__additional">
+        <div class="section__container">
+          <div class="section__row">
+            <div class="footer__additional-section">
+              <p class="footer__copyright">All rights reserved GoFriends &copy; 2013-2018</p>
+            </div>
+            <div class="footer__additional-section">
+              <p class="footer__copyright footer__copyright_policy">Privacy Policy</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
 
-</div>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="{% static "gofriends_site/js/main.js" %}"></script>
-</body>
+    <script src="{% static "gofriends_site/js/libs.min.js" %}"></script>
+    <script src="{% static "gofriends_site/js/main.js" %}"></script>
+  </body>
 </html>
-
