@@ -31,3 +31,7 @@ class CustomerCreate(CreateView):
         response_data['success'] = 'Your e-mail was successfully submitted!'
         return JsonResponse(response_data)
 
+
+class WDView(TemplateView):
+    template_name = 'gofriends_site/web_development.html'
+

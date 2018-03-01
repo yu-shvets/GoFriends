@@ -1,0 +1,465 @@
+@font-face {
+font-family: "AKROBATEXTRALIGHT";
+src: url("../fonts/AKROBAT-EXTRALIGHT.otf") format("truetype");
+}
+
+@font-face {
+font-family: "AKROBATREGULAR";
+src: url("../fonts/AKROBATREGULAR.OTF") format("truetype");
+}
+
+@font-face {
+font-family: "OPENSANSBOLD";
+src: url("../fonts/OPENSANSBOLD.TTF") format("truetype");
+}
+
+@font-face {
+font-family: "OPENSANS";
+src: url("../fonts/OPEN-SANS.TTF") format("truetype");
+}
+
+
+
+
+
+@font-face {
+font-family: "AKROBATBOLD";
+src: url("../fonts/AKROBATBOLD.OTF") format("truetype");
+}
+
+
+
+
+.navbar.navbar-inverse.navbar-fixed-top {
+    background: #000000;
+}
+
+li {
+    float: left;
+    text-transform: uppercase;
+    color: #fff;
+   font-size:17px;
+}
+
+.nav.navbar-nav {
+	float:right;
+	}
+
+.navbar-brand img {
+    width: 80%;
+}
+
+.slide {
+    height: 600px;
+    background: #000;
+}
+
+.nadpis_slide {
+    text-align: center;
+    padding-top: 200px;
+    margin: auto;
+}
+
+.nadpis_slide_left {
+    width: 70%;
+    float: left;
+}
+
+.nadpis_1 {
+    font-size: 72px;
+text-transform: uppercase;
+width: 55%;
+text-align: left;
+line-height: 1;
+color: #fff;
+font-family: OPENSANSBOLD;
+}
+
+.slogan {
+   font-size: 28px;
+   text-align: left;
+   text-transform: uppercase;
+   width: 55%;
+   font-stretch: ultra-condensed;
+line-height: 1;
+padding-top: 20px;
+color: #fff;
+}
+
+.slogan span {
+	color:#00b384;
+	}
+
+.nadpis_slide_right {
+    width: 30%;
+    float: left;
+    padding-top: 80px;
+    }
+
+.nadpis_2 {
+    font-size: 60px;
+text-transform: uppercase;
+width: 55%;
+text-align: left;
+line-height: 1;
+color: #fff;
+font-family: OPENSANSBOLD;
+}
+
+.slogan2 {
+    width: 30%;
+    color: #fff;
+    text-align: left;
+    font-size: 24px;
+    font-family: AKROBATREGULAR;
+}
+
+.uslugi {
+
+   box-shadow: 0 0 10px rgba(0,0,0,0.5);
+padding: 10px;
+padding-top: 10px;
+width: 1263px;
+padding-top: 30px;
+background: url(../img/fon.jpg);
+    background-repeat: repeat;
+    background-size: auto auto;
+background-size: 100%;
+padding-bottom: 50px;
+background-repeat: no-repeat;
+margin: auto;
+
+}
+
+.left_uslugi {
+	padding-right: 10px;
+    width: 50%;
+    float: left;
+    padding-top: 60px;
+}
+
+
+
+.left_uslugi_zag {
+    font-family: OPENSANSBOLD;
+    font-size: 56px;
+    text-transform: uppercase;
+}
+
+.left_uslugi_podpis {
+    text-transform: uppercase;
+    font-size: 26px;
+    font-stretch: condensed;
+}
+
+.left_uslugi_text {
+    font-family: AKROBATREGULAR;
+    font-size: 18px;
+    }
+
+.left_uslugi_text span {
+    color: #00b284;
+}
+
+.servis_zag {
+    font-family: OPENSANSBOLD;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 56px;
+    text-transform: uppercase;
+}
+
+.iko_one {
+    background: #000;
+    width: 33%;
+    float: left;
+    height: 389px;
+    color: #fff;
+    font-family: AKROBATBOLD;
+    text-transform: uppercase;
+    font-size: 60px;
+    line-height: -moz-block-height;
+    text-align:center;
+    border: 2px solid #fff;
+    }
+
+.iko_two {
+    background: #f3cf3f;
+    width: 33%;
+    float: left;
+    height: 389px;
+    color: #fff;
+    font-family: AKROBATBOLD;
+    text-transform: uppercase;
+    font-size: 60px;
+    line-height: 1;
+    text-align:left;
+    border: 2px solid #fff;
+      padding: 130px 0px 0px 60px;
+    }
+.iko_three {
+    background: #d91404;
+    width: 33%;
+    float: left;
+    height: 389px;
+    color: #fff;
+    font-family: AKROBATBOLD;
+    text-transform: uppercase;
+    font-size: 60px;
+    line-height: 1;
+    text-align:center;
+    border: 2px solid #fff;
+     line-height: -moz-block-height;
+    }
+
+    .iko_four {
+    background: #00529c;
+    width: 33%;
+    float: left;
+    height: 389px;
+    color: #fff;
+    font-family: AKROBATBOLD;
+    text-transform: uppercase;
+    font-size: 60px;
+    line-height: 1;
+    text-align:center;
+    border: 2px solid #fff;
+     line-height: -moz-block-height;
+    }
+
+.iko_five {
+    background: #000;
+    width: 33%;
+    float: left;
+    height: 389px;
+    color: #fff;
+    font-family: AKROBATREGULAR;
+    text-transform: uppercase;
+    font-size: 36px;
+    line-height: 1;
+    text-align: center;
+    border: 2px solid #fff;
+    padding: 40px 0px 0px 0px;
+    line-height: 1.4;
+    }
+
+    .iko_five span {
+    font-size: 24px;
+    text-transform: none;
+    font-family: AKROBATREGULAR;
+    text-align:left;
+    float: left;
+padding: 24px;
+}
+
+.fon_proces {
+margin-top: 50px;
+    background: url(../img/fon2.jpg);
+        background-repeat: repeat;
+        background-size: auto auto;
+    height: 500px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.ten_proces {
+    background: url(../img/ten.jpg);
+    height: 50px;
+}
+
+.log1 {
+    margin-left: 80px;
+    width: 95px;
+    height:95px;
+font-size: 25px;
+text-align: center;
+font-family: AKROBATREGULAR;
+float: left;
+}
+
+.log2 {
+  margin-left: 340px;
+width: 118px;
+height:87px;
+font-size: 25px;
+text-align: center;
+font-family: AKROBATREGULAR;
+float: left;
+}
+
+.log3 {
+margin-left: 325px;
+width: 122px;
+height:97px;
+font-size: 25px;
+text-align: center;
+font-family: AKROBATREGULAR;
+float: left;
+}
+
+.log4 {
+    margin-left: 60px;
+    width: 142px;
+    max-height:94px;
+    font-size: 25px;
+    text-align: center;
+    font-family: AKROBATREGULAR;
+    float: left;
+    margin-top: 80px;
+    max-height:10px;
+}
+
+.log5 {
+   margin-left: 310px;
+width: 122px;
+max-height:97px;
+font-size: 25px;
+text-align: center;
+font-family: AKROBATREGULAR;
+float: left;
+margin-top: 75px;
+max-height:10px;
+}
+.log6 {
+margin-left: 325px;
+width: 122px;
+height:96px;
+font-size: 25px;
+text-align: center;
+font-family: AKROBATREGULAR;
+float: left;
+margin-top: 75px;
+
+}
+.log7 {
+   margin-left: 80px;
+width: 98px;
+height: 88px;
+font-size: 25px;
+text-align: center;
+font-family: AKROBATREGULAR;
+margin-top: 90px;
+float: left;
+
+}
+
+.log8 {
+margin-left: 340px;
+width: 118px;
+height: 95px;
+font-size: 25px;
+text-align: center;
+font-family: AKROBATREGULAR;
+margin-top: 85px;
+float: left;
+}
+
+.log9 {
+margin-left: 340px;
+width: 118px;
+height: 95px;
+font-size: 25px;
+text-align: center;
+font-family: AKROBATREGULAR;
+margin-top: 85px;
+float: left;
+}
+
+.teh1 {
+    width: 20%;
+    float: left;
+    padding-bottom: 40px;
+    padding-top: 40px;
+}
+
+.text {
+    text-align: center;
+}
+
+.fon_forma {
+    background: url(../img/fon3.jpg);
+    background-repeat: repeat;
+    background-size: auto auto;
+height: 400px;
+background-size: 100%;
+background-repeat: no-repeat;
+margin-top: 40px;
+}
+
+.form {
+    float: right;
+    margin-top: 100px;
+    color: #fff;
+    width: 50%;
+    text-align: center;
+    font-size: 36px;
+    font-family: AKROBATBOLD;
+}
+
+.form_text {
+    font-family: AKROBATLIGHT;
+    font-size: 20px;
+}
+
+.contacts__field {
+    background: none;
+    width: 80%;
+    border: 1px solid;
+    margin: 5px;
+    font-family: AKROBATREGULAR;
+    font-size: 18px;
+    padding: 10px;
+    color: #fff;
+}
+
+.contacts__btn {
+    background: #33b185;
+border: 0px;
+font-family: AKROBATBOLD;
+font-size: 16px;
+width: 200px;
+height: 50px;
+}
+.footer {
+	margin-top:30px;
+	}
+.logo_footer {
+    width: 25%;
+    float: left;
+}
+.mebu_footer {
+    float: left;
+    width: 25%;
+        font-family: AKROBATREGULAR;
+}
+
+.contact_footer {
+    float: left;
+    width: 25%;
+        font-family: AKROBATREGULAR;
+}
+
+.page {
+	color:#33b185;
+	font-family: AKROBATBOLD;
+	line-height: 0.6;
+	padding-bottom: 20px;
+}
+
+.all {
+    float: left;
+    padding: 5px;
+}
+.line_footer {
+    width: 100%;
+    background: #323232;
+    margin-top: 30px;
+    color: #fff;
+    }
+
+    .bl {
+    width: 50%;
+    float: left;
+    height: 50px;
+    padding: 15px;
+}

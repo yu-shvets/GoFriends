@@ -17,13 +17,15 @@ from django.contrib import admin
 from django.conf.urls import url, include
 from django.conf.urls.static import static
 from django.conf import settings
-from gofriends_site.views import HomeView, CustomerCreate
+from gofriends_site.views import HomeView, CustomerCreate, WDView
 
 urlpatterns = [
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
 
     url(r'^$', HomeView.as_view(), name='home'),
     url(r'^customer_create/$', CustomerCreate.as_view(), name='customer_create'),
+
+    url(r'^web_development/$', WDView.as_view(), name='web_development'),
 
     url(r'^admin/', admin.site.urls)
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
