@@ -1,0 +1,16 @@
+.services {
+  padding: 50px 0;
+  height: auto;
+  &__column {
+    min-height: auto;
+  }
+}
+
+.cases {
+  &__wrapper{
+    order: 1;
+  }
+  &__description {
+    order: 2;
+  }
+}

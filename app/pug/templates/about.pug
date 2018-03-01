@@ -14,11 +14,11 @@ mixin single-reverse(title, description)
           span= description
     .single-about__img(style='background-image: url()')
 
-section.section.about
+section.section.section_line.about
   .section__container
-    .section__column
-      h2.section__title-primary About us
-      p.mt-10 GofriendsPro: Your Pass to Success
+    .section__column.about__column
+      h2.section__title-primary.text-title About us
+      p.text-semi.mt-10 GofriendsPro: Your Pass to Success
   .about__single.single-about.mt-60
     .single-about__img(style='background-image: url()')
     .single-about__description
@@ -30,6 +30,7 @@ section.section.about
           | UI/UX designers, SEO and marketing experts, testing & quality assurance (QA) engineers, is well-coordinated and 
           | success-oriented.
   .about__single.single-about
+    .single-about__img(style='background-image: url()')
     .single-about__description
       .single-about__wrapper  
         p.mt-20
@@ -37,11 +38,7 @@ section.section.about
           | comprehensive, full-cycle development 
           |services for our valued customers, being friendly and 
           | client-oriented.
-    .single-about__img(style='background-image: url()')
-  +single('We focus ', 
-  ' on the project’s purposes and your requirements, creating outstanding functionality and design of every software solution. Our developers are well-versed in the most advanced and efficient technologies and programming languages such as PHP, Python, Django, Node JS.'
-  )
-  +single-reverse('Nowadays ', "we are expanding to the global markets, including the USA and Europe. We help our outsourcing customers with websites development and promotion, CRM and ERP applications building.")
+    
       
       
       

@@ -1,0 +1,15 @@
+mixin single-activity(title, description)
+  .activity__single.single-activity(style='background-image:url("")')
+    .single-activity__shadow
+      .single-activity__wrapper
+        .single-activity__title= title
+        .single-activity__text= description
+        a(href="#").single-activity__button Show more
+          img(src='img/arrow-button.png')
+
++single-activity('e-commerce', 'lorem  LOREM LOREM LOREM LOREM LOREM LOREM LREOMlorem')
++single-activity('e-commerce', 'lorem  LOREM LOREM LOREM LOREM LOREM LOREM LREOMlorem')
++single-activity('e-commerce', 'lorem  LOREM LOREM LOREM LOREM LOREM LOREM LREOMlorem')
++single-activity('e-commerce', 'lorem  LOREM LOREM LOREM LOREM LOREM LOREM LREOMlorem')
++single-activity('e-commerce', 'lorem  LOREM LOREM LOREM LOREM LOREM LOREM LREOMlorem')
++single-activity('e-commerce', 'lorem  LOREM LOREM LOREM LOREM LOREM LOREM LREOMlorem')

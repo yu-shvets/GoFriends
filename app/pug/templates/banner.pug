@@ -1,0 +1,25 @@
+section.section.banner(style='background-image:url("../../img/slider-1.png")')
+  .banner__shadow
+    .section__container
+      .section__row.banner__row
+        h1.banner__title
+          span.text-theme we 
+          | are
+          span.text-theme  changing 
+          br
+          | the world for 
+          br
+          | the better
+        .banner__benefits
+          -var number = ['21', '150+', '5+']
+          -var text = ['people inthe team', 'projects delivered', 'years ofexperience']
+          each it,index in number
+            .banner__single
+              p.banner__single-number= it
+              p= text[index]
+    .banner__footer
+      nav.nav.nav-banner
+        ul.nav__list
+          each bannerMenu in ['development', 'design', 'marketing']
+            li.nav-banner__item
+              a(href="#").nav-banner__link.text-semi= bannerMenu

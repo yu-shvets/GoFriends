@@ -1,11 +1,60 @@
-.s1 {
-  background-color:green;
+.banner {
+  &__row {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+  }
 }
 
-.s2 {
-  background-color: lightblue;
+.single-about {
+  margin-top: 20px;
+  &:nth-child(2n) {
+    .single-about__description {
+      order: 2;
+    }
+    .single-about__img {
+      order: 1;
+    }
+  }
+  &__description {
+    width: 100%;
+    margin: 0 15px;
+    order: 2;
+  }
+  &__wrapper {
+    padding: 0;
+    margin-top: 20px;
+  }
+  &__img {
+    width: 100%;
+    order: 1;
+  }
 }
 
-.s1, .s2 {
-  height:500px;
+.clients {
+  &__logo {
+    margin-top: 40px;
+  }
+}
+
+.send__wrapper {
+  padding-right: 0;
+  margin: 0 20px;
+  .button-send {
+    display: unset;
+  }
+}
+
+
+
+.footer {
+  &__logo {
+    margin-bottom: 30px;
+  }
+  &__social {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
 }

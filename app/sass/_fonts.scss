@@ -8,7 +8,30 @@
 //   font-style: normal;
 // }
 
-@import url('https://fonts.googleapis.com/css?family=Comfortaa:300,400,700|Open+Sans:300,400,600,700,800');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');
+$path : '../fonts/MyriadPro-Regular';
+@font-face {
+	font-family: 'Myriad Pro';
+	src: url('#{$path}.eot');
+	src: local('Myriad Pro Regular'), local('MyriadPro-Regular'),
+		url('#{$path}.eot?#iefix') format('embedded-opentype'),
+		url('#{$path}.woff') format('woff'),
+		url('#{$path}.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+$path : '../fonts/akrobat/Akrobat-Regular';
+@font-face {
+	font-family: 'Akrobat';
+	src: url('#{$path}.eot');
+	src: local('Akrobat Regular'), local('Akrobat-Regular'),
+		url('#{$path}.eot?#iefix') format('embedded-opentype'),
+		url('#{$path}.woff') format('woff'),
+		url('#{$path}.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
 
 // @font-face {
 //   font-family: 'Geometria';

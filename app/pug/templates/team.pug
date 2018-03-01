@@ -1,17 +1,18 @@
-mixin member(name, position)
+mixin member(name, position, text)
   .team__single.item
     .team__avatar(style='background-image:url("../../img/team.png")')
     .team__description
       .team__name= name
       .team__position= position
+      .team__text= text
     
-section.section.section_dark.team
-  .section__container
-    .section__column
-      h2.section__title-primary Our Team
+section.section.team
+  .section__container.team__column
+    .section__column.team__column
+      h2.section__title-primary.text-title Our Team
       .team__wrapper
         #owl.owl-carousel
           -var i = 0;
           -while(i< 8)
-            +member('name', 'UX/UI & Frontend Design')
+            +member('name', 'UX/UI & Frontend Design','lorem epsum lorem epsum lorem epsum lorem epsumlorem epsum lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum')
             -i++;

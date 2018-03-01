@@ -1,12 +1,9 @@
 section.section.cases
   .section__container
-    .section__column
-      h2.section__title-primary Case studies
-      -var i = 0
-      -while(i < 2)
-        include ./single-case.pug
-        include ./single-case-reverse.pug
-        -i++;
-      a(href='#').button-primary.button.button_shadow.cases__button View all cases
-      
-          
+    .section__column.cases__column
+      h2.section__title-primary.text-title Case studies
+      include ./single-case.pug
+      include ./single-case.pug
+      include ./single-case.pug
+  div.cases__button
+    a(href="#").cases__button-inner View all cases

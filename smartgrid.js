@@ -6,7 +6,7 @@ var settings = {
   columns: 12,
   offset: "30px",
   container: {
-    maxWidth: '1410px', /* max-width оn very large screen */
+    maxWidth: '100%', /* max-width оn very large screen */
     fields: '30px' /* side fields */
   },
   oldSizeStyle: false,

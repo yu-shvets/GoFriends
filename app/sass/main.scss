@@ -3,11 +3,12 @@
 @import 'smartgrid';
 @include reset();
 ::selection { background: rgba($theme-color, .5); }
-* { font-family: $main-font; color: $main-color; font-size: 18px; }
+* { font-family: $main-font; color: $main-color; font-size: calc(12px + 0.4vw); }
 .container-fluid {max-width: 1920px; }
 .align-right { text-align: right; }
 .align-left { text-align: left; }
 .align-center { text-align: center; }
+body {background-color: #fff; }
 
 .nav {
   &__item {
@@ -40,7 +41,7 @@
 .swiper-slide {
   background-size: cover;
   background-position: center center;
-  height: calc(100vh - 100px);
+  height: 100vh;
   /* Center slide text vertically */
 }
 
@@ -52,6 +53,11 @@
   &_dark-lighten {
     background-color: #fafafa;
   }
+  //--- Bottom line --- //
+  &_line {
+    box-shadow: 6px 6px 27px 0 rgba(0,0,0, .22);
+  }
+  //--- End bottom line --- //
   //--- end style for section color ---
 
   //--- Grid sections styles ---
@@ -68,7 +74,10 @@
   &__column {
     @include row-flex();
     flex-direction: column;
-    align-items: center;
+  }
+  &__wrapper {
+    @include col();
+    @include size(12);
   }
   &__small {
     @include col();
@@ -79,9 +88,8 @@
 
   /* --- Texts styles in section */
   &__title-primary {
-    font-family: 'Comfortaa';
-    font-size: 48px;
-    padding-top: 70px;
+    font-family: 'Open Sans';
+    text-transform: uppercase;
   }
   &__text {
     &_subtitle {
@@ -120,26 +128,73 @@
   }
 }
 
+/* --- MAIN TEXT ---  */
+.text {
+  &-theme {
+    color: $theme-color;
+  }
+  &-title {
+    font-size: calc(20px + 2.0vw);
+  }
+  // ~= 24px
+  &-semi {
+    font-size: calc(14px + 0.5vw)
+  }
+}
+
+/* --- END MAIN TEXT --- */
+
 .footer {
   &__main {
     padding-bottom: 50px;
     padding-top: 40px;
   }
   &__logo {
-    @include size(3);
+    @include size(2);
+    @include size-sm(12);
     @include col();
   }
   &__menu {
     @include size(2);
+    @include size-sm(6);
     @include col();
     padding-left: 10px;
   }
   &__social {
     @include size(5);
+    @include size-sm(12);
     @include col();
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+    &-block {
+      padding-top: 20px;
+      display: flex;
+    }
+    &-single {
+      width: 48px;
+      height: 48px;
+      background-color: #e1e3e3;
+      border-radius: 50%;
+      margin: 0 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &:hover > .footer__social-item {
+        transform: rotate(720deg);
+        & path {
+          color: $theme-color;
+        }
+      }
+    }
+    &-item {
+      font-size: 24px; 
+      transition: all .3s;
+    }
+    &-item path {
+      color: $white-color;
+      
+    }
   }
   &__title {
     position: relative;
@@ -191,7 +246,7 @@
   &_services {
     display: flex;
     @include col();
-    padding-top: 70px;
+    @include size(12);
     flex-wrap: wrap;
     justify-content: center;
   }
@@ -207,6 +262,8 @@
     &_services {
       @include size(2);
       @include col();
+      padding-top: 70px;
+      flex-basis: 220px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -217,6 +274,9 @@
     padding-top: 40px;
     font-size: calc(12px + 0.2vw);
     margin-top: auto;
+    text-align: center;
+  }
+  &__subtitle {
     text-align: center;
   }
   &__wrap {
@@ -246,7 +306,6 @@
       background: transparent;
       color: #fff;
       border: 1px solid rgba(#fff, .5);
-      border-radius: 5px;
       font-weight: 300;
       &::placeholder {
         color: #fff;

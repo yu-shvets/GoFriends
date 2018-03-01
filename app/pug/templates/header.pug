@@ -1,4 +1,4 @@
-header.header
+header.header.animated.fadeIn
   .header__wrapper
     .header__row
       a(href='#').header__logo
@@ -7,5 +7,5 @@ header.header
         ul.nav__list.header-list
           each item in ['home', 'case studies', 'services', 'industries', 'technolgies', 'about us', 'contacts']
             li.nav__item.nav__item_inline.header-item
-              a(href='#').nav__link.nav__link_primary.header-link= item
+              a(href='#').header-link= item
             
