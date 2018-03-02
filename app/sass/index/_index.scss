@@ -86,6 +86,11 @@ canvas {
     &-number {
       font-size: calc(18px + 1.9vw);
       font-weight: 700;
+      & span {
+        font-size: inherit;
+        font-weight: inherit;
+        color: inherit;
+      }
     }
   }
   position: relative;
@@ -102,7 +107,7 @@ canvas {
   }
   &__footer {
     position: absolute;
-    bottom: 5%;
+    bottom: 7%;
     left: 0;
     right: 0;
   }
@@ -168,6 +173,21 @@ canvas {
     padding-left: 15px;
     color: $white-color;
     word-wrap: unset;
+    & > div > div > div {
+      font-size: calc(25px + 2.5vw);
+      color: $white-color;
+    }
+    & > div > div {
+      padding-right: 7px;
+    }
+    & > div:nth-child(1) > div:nth-child(1) > div {
+      color: $theme-color;
+      font-weight: 300;
+    }
+    & > div:nth-child(1) > div:nth-child(3) > div {
+      color: $theme-color;
+      font-weight: 300;
+    }
     & span {
       font-size: inherit;
     }
@@ -222,6 +242,7 @@ canvas {
   &__subtitle {
     @include col();
     @include size(10);
+    text-align: center;
     margin-top: calc(20px + 0.3vh);
   }
 }
@@ -281,11 +302,13 @@ canvas {
     color: $theme-color;
     font-weight: 700;
     font-size: calc(25px + 1.5vw);
+    font-family: "Open Sans";
     text-transform: uppercase;
   }
   &__subtitle {
     font-size: calc(14px + 1vw);
     font-weight: 300;
+    font-family: "Open Sans";
     text-transform: uppercase;
   }
   &__text {
@@ -312,12 +335,21 @@ canvas {
     text-align: center;
     margin-top: 30px;
     position: relative;
+    &:hover {
+      &:before {
+        right: calc(50% + 52px);
+      }
+      &:after {
+        left: calc(50% + 52px);
+      }
+    }
     &:before{
       content: "";
       position: absolute;
+      transition: all .3s;
       left: 0;
       top: calc(50% - 3px);
-      right: calc(50% + 100px);
+      right: calc(50% + 89px);
       height: 3px;
       background: $theme-color;
     }
@@ -326,7 +358,8 @@ canvas {
       position: absolute;
       left: 0;
       top: calc(50% - 3px);
-      left: calc(50% + 100px);
+      transition: all .3s;
+      left: calc(50% + 89px);
       right: 0;
       height: 3px;
       background: $theme-color;
@@ -338,11 +371,17 @@ canvas {
       font-size: 18px;
       color: $main-color;
       position: relative;
+      transition: all .1s;
+      &:hover {
+        color: $main-color;
+        text-decoration: none;
+        border: 3px solid transparent;
+      }
     }
   }
   &__more {
     p {
-      padding-top: 10px;
+      padding-top: 7px;
       &:first-child {
         padding-top: 15px;
       }
@@ -441,7 +480,7 @@ canvas {
 .activity {
   padding-bottom: 80px;
   &__subtitle {
-    margin-top: 70px;
+    margin-top: 40px;
     @include size(10);
     text-align: center;
     transition: all .4s;
@@ -509,6 +548,14 @@ canvas {
     margin-top: 30px;
     background-color: #93bfa5;
     color: rgba($main-color, .5);
+    &:hover {
+      color: rgba($main-color, .5);
+      text-decoration: none;
+      img {
+        padding-left: 5px;
+        transition: all .5s;
+      }
+    }
   }
 }
 
@@ -565,7 +612,8 @@ canvas {
   padding: 75px 0;
   &__wrapper {
     margin-top: 70px;
-    width: 100%;
+    width: 80%;
+    margin: 0 auto;
     @include col();
     display: flex;
   }
@@ -735,6 +783,9 @@ canvas {
     justify-content: center;
     padding-right: 20%;
     height: 100vh;
+    & h3 {
+      color: $white-color;
+    }
   }
   &__wrap {
     height: 100vh;

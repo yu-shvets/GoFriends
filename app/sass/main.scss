@@ -90,6 +90,7 @@ body {background-color: #fff; }
   &__title-primary {
     font-family: 'Open Sans';
     text-transform: uppercase;
+    font-weight: 700;
   }
   &__text {
     &_subtitle {
@@ -139,6 +140,9 @@ body {background-color: #fff; }
   // ~= 24px
   &-semi {
     font-size: calc(14px + 0.5vw)
+  }
+  &-subfont {
+    font-family: 'Open Sans';
   }
 }
 

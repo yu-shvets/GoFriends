@@ -1,25 +1,29 @@
 .header {
   background-color: rgba($headfoot-color, .7);
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   animation-delay: 0.6s;
   z-index: 2;
+  .nav-collapse li{
+    display: inline-block;
+    width: auto;
+  }
   &__wrapper {
     @include wrapper();
   }
   &__row {
     @include row-flex();
     justify-content: center;
-    height: 70px;
     align-items: center;
+    padding: 20px 0;
   }
   &__logo {
     display: block;
     padding-right: 25px;
     & img {
-   
+      
     }
   }
   &-nav {
@@ -28,22 +32,23 @@
   &-list {
     height: 100%;
   }
-  &-item {
+  &__item {
     height: 100%;
+    display: inline-block;
   }
-  &-item:hover > &-link:after {
+  &__item:hover > &__link:after {
     width: 100%;
     &:first-child {
-      .header-link {
+      .header__link {
         padding-left: 0;
         padding-right: 30px;
       }
     }
   }
-  &-item:hover > &-link__drop:before {
+  &__item:hover > &__link__drop:before {
     height: 100%;
   }
-  &-link {
+  &__link {
     padding: 0 15px;
     text-transform: uppercase;
     height: 100%;
@@ -78,5 +83,17 @@
       right: 0;
       bottom: 0;
     }
+  }
+}
+
+.slicknav_menu { 
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  transition: all .3s;
+  background: transparent;
+  &_color {
+    background-color: #000;
   }
 }

@@ -58,3 +58,20 @@
     margin-top: 20px;
   }
 }
+.header {
+  &__row {
+    flex-direction: column;
+  }
+  .nav-collapse li {
+    display: block;
+    width: 100%;
+  }
+}
+
+.slicknav_menu {
+  display: block;
+}
+
+.header-nav {
+  display: none;
+}

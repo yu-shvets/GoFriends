@@ -50,9 +50,13 @@ gulp.task('scripts', function() {
         'app/libs/jquery/dist/jquery.min.js',
         'app/libs/swiper/dist/js/swiper.min.js',
         'app/libs/owl.carousel/dist/owl.carousel.min.js',
-        'app/libs/particles.js/particles.min.js',
+        'app/libs/gsap/src/minified/',
+        'app/js/SplitText.min.js',
+        'app/libs/gsap/src/minified/TweenMax.min.js',
+        'app/libs/responsive-nav//client/dist/responsive-nav.min.js',
+        'app/libs/slicknav/dist/jquery.slicknav.js',
         'app/libs/slick-carousel/slick/slick.js'
-        ])
+    ])
         .pipe(concat('libs.min.js'))
         .pipe(uglify())
         .pipe(gulp.dest('app/js'));

@@ -22,6 +22,8 @@
     "swiper": "^4.1.6",
     "slick-carousel": "^1.8.1",
     "owl.carousel": "^2.2.1",
-    "animate.css": "^3.5.2"
+    "animate.css": "^3.5.2",
+    "gsap": "greensock#^1.20.4",
+    "slicknav": "^1.0.10"
   }
 }

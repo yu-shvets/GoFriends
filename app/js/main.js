@@ -43,11 +43,8 @@ $('document').ready(function(){
       950: {
         items: 3
       },
-      1200:{
-          items:4
-      },
-      1800: {
-        items: 5
+      1600: {
+        items: 4
       }
 
     }
@@ -62,61 +59,63 @@ $('document').ready(function(){
 });
 
 var onMouse = document.querySelectorAll('.cases__work'),
-    cases   = document.querySelectorAll('.cases__wrapper');
+    cases = document.querySelectorAll('.cases__wrapper');
 
-
-onMouse.forEach((element,index,array) => {
-  if(element) {
+onMouse.forEach(function (element, index, array) {
+  if (element) {
     element.onmouseenter = scrollBottom;
-    element.onmouseleave = returnScroll;
   }
-})
+});
 
 function scrollBottom(event) {
   event.target.firstElementChild.classList.add("animatedBottom");
-  setTimeout(() => {
+  setTimeout(function () {
     event.target.firstElementChild.classList.remove("animatedBottom");
-  }, 10000)
+  }, 10000);
 }
 
-function returnScroll() {
+TweenMax.set(".banner__title");
 
+var titleText = new SplitText(".banner__title"),
+    tl = new TimelineLite(),
+    numWords = titleText.chars.length;
+
+function initTitle() {
+  for (var i = 0; i < numWords; i++) {
+
+      tl.from(titleText.chars[i], 1.5, {
+          force3D: true,
+          opacity: 0,
+          x: -500,
+          transformOrigin: "0% 50%",
+          ease: Back.easeOut
+      }, Math.random());
+  }
 }
 
+$('#menu').slicknav({
+  prependTo: '.header',
+  label: ''
+});
 
-// function scrollBottom(obj) {
-//   let thisImg = obj.target.firstElementChild.firstElementChild,
-//       thisFullSCroll = obj.target.firstElementChild,
-//       heightImg = thisImg.offsetHeight,
-//       stepScroll = heightImg / 400;
-//   var timerId = setInterval(() => {
-//     thisFullSCroll.scrollTop += stepScroll;
-//     console.log('Hello');
-//   }, 25);
-//   setTimeout(() => {
-//     clearInterval(timerId);
-//     thisFullSCroll.scrollTop = 0;
-//   }, 10000);
-// }
+$('.slicknav_btn').click(function(){
+  $('.slicknav_menu').toggleClass("slicknav_menu_color");
+})
 
-// function returnScroll () {
-//   clearInterval(timerId);
-// }
+initTitle();
 
-
-// function preventDefault(e) {
-//   e = e || window.event;
-//   if (e.preventDefault)
-//       e.preventDefault();
-//   e.returnValue = false;  
-// }
-
-// function disableScroll() {
-
-//   document.body.style.overflow = 'hidden';
-// }
-
-// function enableScroll() {
-
-//   document.body.style.overflow = 'auto';  
-// }
+(function(){
+  var firstVal = document.getElementById('a1').innerHTML, 
+  secondVal = document.getElementById('a2').innerHTML,
+  thirdVal = document.getElementById('a3').innerHTML;
+  Cont={val:0};
+  TweenLite.to(Cont,2,{val:firstVal,roundProps:"val",onUpdate:function(){
+    document.getElementById("a1").innerHTML=Cont.val
+  }});
+  TweenLite.to(Cont,3,{val:secondVal,roundProps:"val",onUpdate:function(){
+    document.getElementById("a2").innerHTML=Cont.val
+  }});
+  TweenLite.to(Cont,2,{val:thirdVal,roundProps:"val",onUpdate:function(){
+    document.getElementById("a3").innerHTML=Cont.val
+  }});
+})();

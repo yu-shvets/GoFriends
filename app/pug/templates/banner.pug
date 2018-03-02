@@ -11,12 +11,20 @@ section.section.banner(style='background-image:url("../../img/slider-1.png")')
           br
           | the better
         .banner__benefits
-          -var number = ['21', '150+', '5+']
+          -var number = ['21', '150', '5']
           -var text = ['people inthe team', 'projects delivered', 'years ofexperience']
+          -var id = ['a1', 'a2', 'a3']
           each it,index in number
-            .banner__single
-              p.banner__single-number= it
-              p= text[index]
+            -if(it == "150" || it == "5")
+              .banner__single
+                p.banner__single-number
+                  span(id= id[index])= it
+                  | +
+                p= text[index]
+            -else
+              .banner__single
+                  p.banner__single-number(id= id[index])= it
+                  p= text[index]
     .banner__footer
       nav.nav.nav-banner
         ul.nav__list
