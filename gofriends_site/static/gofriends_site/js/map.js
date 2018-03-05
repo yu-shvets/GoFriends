@@ -3,7 +3,7 @@ var tempCountry =
 [{"title":"Lion&#8217;s Heart","link":"https:\/\/gofriends.pro\/case\/lion-s-heart\/"},{"title":"GoFriends Wi-Fi","link":"https:\/\/gofriends.pro\/case\/english-gofriends-wi-fi\/"},{"title":"Restaurant design","link":"https:\/\/gofriends.pro\/case\/russkij-dizajn-restorana\/"},{"title":"E-schools","link":"https:\/\/gofriends.pro\/case\/e-schools\/"},{"title":"Rosslane Film","link":"https:\/\/gofriends.pro\/case\/rosslane-film\/"},{"title":"Arenda auto &#8211;\u00a0is online car rental service","link":"https:\/\/gofriends.pro\/case\/arenda-auto-car-rental-on-line-service\/"},{"title":"Veronika+","link":"https:\/\/gofriends.pro\/case\/english-veronika\/"},{"title":"OpenBit Platform","link":"https:\/\/gofriends.pro\/case\/english-crypto-mlm\/"},{"title":"Athletic Events","link":"https:\/\/gofriends.pro\/case\/english-athletic-events\/"},{"title":"GoFriends Marketplace","link":"https:\/\/gofriends.pro\/case\/gofriends-marketplace\/"}]
 
 
-var country = [{'title': 'UA'}, {'title': 'GL'}];
+var country = [{'title': 'UA'}, {'title': 'GL'}, {'title': 'FR'}];
     
 
 

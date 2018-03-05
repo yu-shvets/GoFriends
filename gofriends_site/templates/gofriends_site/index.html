@@ -17,13 +17,13 @@
         <div class="header__row"><a class="header__logo" href="{% url 'home' %}"><img src="{% static "gofriends_site/img/logo.png" %}" alt="logo" title="logo"></a>
           <nav class="nav header-nav">
             <ul class="nav__list header-list">
-              <li class="nav__item nav__item_inline header-item"><a class="header-link" href="{% url 'home' %}">home</a></li>
-              <li class="nav__item nav__item_inline header-item"><a class="header-link" href="#">case studies</a></li>
-              <li class="nav__item nav__item_inline header-item"><a class="header-link" href="{% url 'web_development' %}">services</a></li>
-              <li class="nav__item nav__item_inline header-item"><a class="header-link" href="#">industries</a></li>
-              <li class="nav__item nav__item_inline header-item"><a class="header-link" href="#">technolgies</a></li>
-              <li class="nav__item nav__item_inline header-item"><a class="header-link" href="#">about us</a></li>
-              <li class="nav__item nav__item_inline header-item"><a class="header-link" href="#">contacts</a></li>
+              <li class="header-item"><a class="header-link" href="{% url 'home' %}">home</a></li>
+              <li class="header-item"><a class="header-link" href="#">case studies</a></li>
+              <li class="header-item"><a class="header-link" href="{% url 'web_development' %}">services</a></li>
+              <li class="header-item"><a class="header-link" href="#">industries</a></li>
+              <li class="header-item"><a class="header-link" href="#">technolgies</a></li>
+              <li class="header-item"><a class="header-link" href="#">about us</a></li>
+              <li class="header-item"><a class="header-link" href="#">contacts</a></li>
             </ul>
           </nav>
         </div>
@@ -37,15 +37,15 @@
               <h1 class="banner__title"><span class="text-theme">we </span>are<span class="text-theme"> changing </span><br>the world for <br>the better</h1>
               <div class="banner__benefits">
                 <div class="banner__single">
-                  <p class="banner__single-number">21</p>
+                  <p class="banner__single-number" id="a1">21</p>
                   <p>people in the team</p>
                 </div>
                 <div class="banner__single">
-                  <p class="banner__single-number">150+</p>
+                    <p class="banner__single-number"><span id="a2">150</span>+</p>
                   <p>projects delivered</p>
                 </div>
                 <div class="banner__single">
-                  <p class="banner__single-number">5+</p>
+                    <p class="banner__single-number"><span id="a3">5</span>+</p>
                   <p>years ofexperience</p>
                 </div>
               </div>
@@ -156,7 +156,7 @@
         <div class="section__container">
           <div class="section__column about__column">
             <h2 class="section__title-primary text-title">About us</h2>
-            <p class="text-semi mt-10">GofriendsPro: Your Pass to Success</p>
+            <p class="text-subfont text-semi mt-10">GofriendsPro: Your Pass to Success</p>
           </div>
         </div>
         <div class="about__single single-about mt-60">
@@ -185,7 +185,7 @@
           </div>
         </div>
       </section>
-      <section class="section map"></section><?xml version="1.0" encoding="utf-8"?>
+      <section class="section map"><?xml version="1.0" encoding="utf-8"?>
 <!-- (c) ammap.com | SVG map of World - Low -->
 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="main-map" viewBox="0 0 1008 650">
 	<defs>
@@ -379,6 +379,7 @@
 		<path id="ZW" title="Zimbabwe" class="land" d="M562.71,527L561.22,526.7L560.27,527.06L558.92,526.55L557.78,526.52L555.99,525.16L553.82,524.7L553,522.8L552.99,521.75L551.79,521.43L548.62,518.18L547.73,516.47L547.17,515.95L546.09,513.6L549.22,513.92L550.13,514.26L551.08,514.19L552.63,512.3L555.07,509.9L556.08,509.68L556.42,508.67L558.01,507.52L560.14,507.12L560.32,508.2L562.66,508.14L563.96,508.75L564.56,509.47L565.9,509.68L567.35,510.62L567.36,514.31L566.81,516.35L566.69,518.55L567.14,519.43L566.83,521.17L566.4,521.44L565.66,523.59z"/>
 	</g>
 </svg>
+      </section>
       <section class="section section_dark clients">
         <div class="section__container">
           <div class="section__row section__row_center"><img class="clients__logo" src="{% static 'gofriends_site/img/cl1.png' %}"><img class="clients__logo" src="{% static 'gofriends_site/img/cl2.png' %}"><img class="clients__logo" src="{% static 'gofriends_site/img/cl3.png' %}"></div>
@@ -394,10 +395,10 @@
                       {% for item in team %}
 
                       <div class="team__single item">
-                        <div class="team__avatar" style="background-image:url({% static 'gofriends_site/img/team.png' %});"></div>
+                        <div class="team__avatar" style="background-image:url({{ item.photo.url }});"></div>
                         <div class="team__description">
-                          <div class="team__name">name</div>
-                          <div class="team__position">UX/UI &amp; Frontend Design</div>
+                          <div class="team__name">{{ item.name }}</div>
+                          <div class="team__position">{{ item.position }}</div>
                           <div class="team__text">lorem epsum lorem epsum lorem epsum lorem epsumlorem epsum lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum</div>
                         </div>
                       </div>
@@ -414,7 +415,7 @@
           <div class="section__container">
             <div class="section__row send__reverse">
               <div class="send__wrapper">
-                <h3 class="h3 section__text section__text_dark-theme section__text_sub-2 section__text_subtitle">Any questions?</h3>
+                <h3 class="section__text section__text_sub-2 section__text_subtitle">Any questions?</h3>
                 <p class="send__subtitle"> Please, fill out the form and we will contact you as soon as possible</p>
                 <form id="customer_form" class="form form_send" method="post" action="{% url 'customer_create' %}">
                         {% csrf_token %}
