@@ -8,8 +8,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>{{ index.title }}</title>
+
   <link href="{% static "gofriends_site/css/libs.min.css" %}" rel="stylesheet">
-  <ink href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css" rel="stylesheet"></ink>
+  <link href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css" rel="stylesheet">
   <link href="{% static "gofriends_site/css/main.css" %}" rel="stylesheet">
   <body>
     <header class="header animated fadeIn">
@@ -21,7 +22,7 @@
               <li class="header__item"><a class="header__link" href="#">case studies</a></li>
               <li class="header__item"><a class="header__link" href="{% url 'web_development' %}">services</a></li>
               <li class="header__item"><a class="header__link" href="#">industries</a></li>
-              <li class="header__item"><a class="header__link" href="#">technolgies</a></li>
+              <li class="header__item"><a class="header__link" href="#">technologies</a></li>
               <li class="header__item"><a class="header__link" href="#">about us</a></li>
               <li class="header__item"><a class="header__link" href="#">contacts</a></li>
             </ul>
@@ -29,6 +30,9 @@
         </div>
       </div>
     </header>
+
+    {% block content %}
+
     <main class="main">
       <section class="section banner" style="background-image:url({% static "gofriends_site/img/slider-1.png" %});">
         <div class="banner__shadow">
@@ -410,6 +414,10 @@
           </div>
         </div>
       </section>
+
+
+      {% endblock content %}
+
       <section class="section send" style="background-image:url(&quot;{% static "gofriends_site/img/quest.png" %}&quot;);">
         <div class="send__wrap">
           <div class="section__container">
@@ -430,6 +438,7 @@
         </div>
       </section>
     </main>
+
     <footer class="footer section">
       <div class="footer__main section_dark-lighten">
         <div class="section__container">
@@ -475,9 +484,11 @@
         </div>
       </div>
     </footer>
+
     <script src="{% static "gofriends_site/js/libs.min.js" %}"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
     <script src="{% static "gofriends_site/js/map.js" %}"></script>
     <script src="{% static "gofriends_site/js/main.js" %}"></script>
+
   </body>
 </html>

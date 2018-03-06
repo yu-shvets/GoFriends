@@ -1861,6 +1861,10 @@ canvas {
 
 .send__wrapper h3 {
   color: #fff;
+  font-family: "Akrobat";
+  font-weight: bold;
+  font-size: 36px;
+
 }
 
 .send__wrap {

@@ -3,305 +3,345 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta content="text/html; charset=utf-8" http-equiv="content-type">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="description">
+  <meta content="" name="author">
 
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+  <title>web development</title>
 
-    <title>web development</title>
+  <link href="{% static "gofriends_site/css/bootstrap.css" %}" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <link href="{% static "gofriends_site/css/bootstrap-theme.css" %}" rel="stylesheet">
+  <link href="{% static "gofriends_site/css/style.css" %}" rel="stylesheet">
+  <link href="{% static "gofriends_site/css/hover.css" %}" rel="stylesheet">
+  <link href="{% static "gofriends_site/css/responsive.css" %}" rel="stylesheet"><!--[if lt IE 9]>
 
-    <link href="{% static 'gofriends_site/css/bootstrap.css' %}" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <link href="{% static 'gofriends_site/css/bootstrap-theme.css' %}" rel="stylesheet">
-    <link href="{% static 'gofriends_site/css/style.css' %}" rel="stylesheet">
-    <link href="{% static 'gofriends_site/css/responsive.css' %}" rel="stylesheet">
-
-
-    <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
+
+</head>
+
+
 <body>
-
-
-<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-
-    <div class="container">
-
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'gofriends_site/img/logo.png' %}" alt=""></a>
-        </div>
-        <div class="navbar-collapse collapse" style="height: 1px;">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="{% url 'home' %}">HOME</a></li>
-                <li><a href="#about">CASE STUDIES</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">SERVICES<b class="caret"></b></a>
-                    <!--<ul class="dropdown-menu">
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
-                    <li class="divider"></li>
-                    <li class="dropdown-header"></li>
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
-                    </ul> -->
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">industries<b class="caret"></b></a>
-                    <!--<ul class="dropdown-menu">
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
-                    <li><a href="#">e</a></li>
-                    <li class="divider"></li>
-                    <li class="dropdown-header"></li>
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
-                    </ul> -->
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">technologies<b class="caret"></b></a>
-                    <!--<ul class="dropdown-menu">
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
-                    <li class="divider"></li>
-                    <li class="dropdown-header"></li>
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
-                    </ul> -->
-                <li><a href="#">Contacts</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">en<b class="caret"></b></a>
-                    <!--<ul class="dropdown-menu">
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
-                    <li class="divider"></li>
-                    <li class="dropdown-header"></li>
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
-                    </ul> -->
-
-                </li>
+  <header class="header animated fadeIn">
+      <div class="header__wrapper">
+        <div class="header__row"><a class="header__logo" href="{% url 'home' %}"><img src="{% static 'gofriends_site/img/logo.png' %}" alt="logo" title="logo"></a>
+          <nav class="nav header-nav" id="menu">
+            <ul class="nav__list header-list">
+              <li class="header__item"><a class="header__link" href="{% url 'home' %}">home</a></li>
+              <li class="header__item"><a class="header__link" href="#">case studies</a></li>
+              <li class="header__item"><a class="header__link" href="#">services</a></li>
+              <li class="header__item"><a class="header__link" href="#">industries</a></li>
+              <li class="header__item"><a class="header__link" href="#">technologies</a></li>
+              <li class="header__item"><a class="header__link" href="#">about us</a></li>
+              <li class="header__item"><a class="header__link" href="#">contacts</a></li>
             </ul>
+          </nav>
         </div>
-    </div>
-</div>
-
-<div class=slide>
+      </div>
+    </header>
+  <div id="particles-js">
     <div class="container">
-        <div class=nadpis_slide>
-            <div class=nadpis_slide_left>
-                <div class=nadpis_1>web<br>development</div>
-                <div class=slogan>Our well-defined development processes guarantee you - <span>speed</span> and <span>quality</span>
-                </div>
-            </div>
-            <div class=nadpis_slide_right>
-                <div class=nadpis_2>150+</div>
-                <div class=slogan2>projects<br>delivered</div>
-            </div>
+      <div class="nadpis_slide">
+        <div class="nadpis_slide_left">
+          <div class="nadpis_1">
+            web<br>
+            development
+          </div>
+          <div class="slogan">
+            Our well-defined development processes guarantee you - <span>speed</span> and <span>quality</span>
+          </div>
         </div>
+        <div class="nadpis_slide_right">
+          <div class="nadpis_2">
+            150+
+          </div>
+          <div class="slogan2">
+            <span class="test-slogan2">projects</span><br>
+            <span class="test-slogan2">delivered</span>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
+
+  <!-- Верстка Слави -->
+  <div class="web-development">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="web-development-text">
+        <h1 class="web-development-title">Web Development</h1>
+        <h2 class="web-development-subtitle">Услуги по созданию и продвижению сайтов</h2>
+        <div class="web-development-info">
+          <p class="web-development-info__p"><span class="web-development-tags">Gofriends</span> ориентируется на индивидуальные бизнес-потребности и текущие рыночные тенденции. Мы уже создали несколько десятков пользовательских веб-сайтов для успешных стартапов и предприятий, таких как рестораны, киностудии или интернет-магазины.</p>
+
+          <p class="web-development-info__p">Наши талантливые разработчики хорошо разбираются в самых передовых, эффективных технологиях <span class="web-development-tags">программирования</span>, имеют опыт работы как на стороне клиента, так и на стороне сервера, разработке контента и создании CMS. В зависимости от сложности и целей проекта мы выбираем лучшие инструменты разработки.</p>
+          <p class="web-development-info__p">Мы помогаем в <span class="web-development-tags">реализации</span> ваших бизнес-целей, привлекая множество заинтересованных клиентов, увеличивая объем продаж и прибыль.</p>
+        </div>
+      </div>
+      </div>
+      <div class="col-md-6">
+        <div class="web-development-img">
+          <img src="{% static 'gofriends_site/img/mon.png' %}" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+<!-- Верстка Слави -->
+<div class=ten_proces></div>
+  <div class="container">
+    <div class="all_iko">
+
+      <div class="servis_zag2">
+        SERVICES
+      </div>
+
+      <div class="img__wrap">
+  <div class="iko_one">
+        online store
+      </div>
+  <div class="img__description_layer">
+    <p class="img__description">online store<br><font size=6px>ваш текст</font></p></div>
 </div>
 
-<div class=uslugi>
+<div class="img__wrap2">
+  <div class="iko_two">
+        corporate website
+      </div>
+  <div class="img__description_layer2">
+    <p class="img__description2">corporate website<br><font size=6px>ваш текст</font></p></div>
+</div>
+
+<div class="img__wrap3">
+ <div class="iko_three">
+        landing page
+      </div>
+  <div class="img__description_layer3">
+    <p class="img__description3">landing page<br><font size=6px>ваш текст</font></p></div>
+</div>
+
+<div class="img__wrap3">
+  <div class="iko_three">визитка</div>
+  <div class="img__description_layer3">
+    <p class="img__description3">визитка<br><font size=6px>ваш текст</font></p></div>
+</div>
+
+<div class="img__wrap4">
+  <div class="iko_four">
+        каталог
+      </div>
+  <div class="img__description_layer4">
+    <p class="img__description4">каталог<br><font size=6px>ваш текст</font></p></div>
+</div>
+
+<div class="img__wrap5">
+  <div class="iko_five">
+        уникальный портал
+      </div>
+  <div class="img__description_layer5">
+    <p class="img__description5"> уникальный портал<br><font size=4px> &bull;21 функциональный модуль<br>
+        &bull;Система управления сайтом (CMS)<br>
+        &bull;Базовое наполнение сайта<br>
+        &bull;Обучение работе с сайтом<br>
+        &bull;Добавление сайта в Google, Яндекс</font></p></div>
+</div></div>
+
+
+      </div>
+
+  <div class="test">
+  <div class="container">
+    <div class="servis_zag">
+      developing process
+    </div>
+  </div>
+  <div class="container">
+    <div class="fon_proces">
+      <div class="log1">
+        <img alt="" src="{% static 'gofriends_site/img/log1.jpg' %}"><br>
+        Meeting
+      </div>
+      <div class="log2">
+        <img src="{% static 'gofriends_site/img/log2.jpg' %}" alt=""><br>
+        Specifications
+      </div>
+      <div class="log3">
+        <img alt="" src="{% static 'gofriends_site/img/log3.jpg' %}"><br>
+        Estimate
+      </div>
+      <div class="log4">
+        <img alt="" src="{% static 'gofriends_site/img/log4.jpg' %}"><br>
+        Development
+      </div>
+      <div class="log5">
+        <img alt="" src="{% static 'gofriends_site/img/log5.jpg' %}"><br>
+        UI/UX
+      </div>
+      <div class="log6">
+        <img alt="" src="{% static 'gofriends_site/img/log6.jpg' %}"><br>
+        Project plan
+      </div>
+      <div class="log7">
+        <img alt="" src="{% static 'gofriends_site/img/log7.jpg' %}"><br>
+        QA
+      </div>
+      <div class="log8">
+        <img alt="" src="{% static 'gofriends_site/img/log8.jpg' %}"><br>
+        Delivering
+      </div>
+      <div class="log9">
+        <img alt="" src="{% static 'gofriends_site/img/log9.jpg' %}"><br>
+        Support
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="test2">
+  <div class="servis_zag">
+    technologies we use
+  </div>
+  <div class="container">
+    <div class="all_teh">
+      <div class="teh1">
+        <img alt="" src="{% static 'gofriends_site/img/teh1.jpg' %}"><br>
+        Python
+      </div>
+      <div class="teh1">
+        <img alt="" src="{% static 'gofriends_site/img/teh2.jpg' %}"><br>
+        PHP
+      </div>
+      <div class="teh1">
+        <img alt="" src="{% static 'gofriends_site/img/teh3.jpg' %}"><br>
+        Node JS
+      </div>
+      <div class="teh1">
+        <img alt="" src="{% static 'gofriends_site/img/teh4.jpg' %}"><br>
+        Django
+      </div>
+      <div class="teh1">
+        <img alt="" src="{% static 'gofriends_site/img/teh5.jpg' %}"><br>
+        Laravel
+      </div>
+      <div class="teh1">
+        <img alt="" src="{% static 'gofriends_site/img/teh6.jpg' %}"><br>
+        Angular JS
+      </div>
+      <div class="teh1">
+        <img alt="" src="{% static 'gofriends_site/img/teh7.jpg' %}"><br>
+        Vue JS
+      </div>
+      <div class="teh1">
+        <img alt="" src="{% static 'gofriends_site/img/teh8.jpg' %}"><br>
+        React JS
+      </div>
+      <div class="teh1">
+        <img alt="" src="{% static 'gofriends_site/img/teh9.jpg' %}"><br>
+        WordPress
+      </div>
+      <div class="teh1">
+        <img alt="" src="{% static 'gofriends_site/img/teh10.jpg' %}"><br>
+        HTML5
+      </div>
+      <div class="text">
+        This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="fon_forma">
+    <div class="form">
+      Any questions?
+      <div class="form_text form-text-adaptive">
+        Please, fill out the form and we will contact you as soon as possible
+      </div>
+      <div class="contacts__form">
+        <input class="contacts__field" placeholder="Your Name" type="text" value=""> <input class="contacts__field" placeholder="Your Email" type='text' value=""> <button class="contacts__btn" type="submit">Send</button>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="footer">
+      <div class="logo_footer"><img alt="" src="{% static 'gofriends_site/img/logo_footer.jpg' %}"></div>
+      <div class="mebu_footer">
+        <div class="page">
+          Pages<br>
+          ___
+        </div>Home<br>
+        Case studies<br>
+        About us<br>
+        Our team<br>
+      </div>
+      <div class="contact_footer">
+        <div class="page">
+          Contact info<br>
+          ______
+        </div>28a Panasa Mirnogo st.<br>
+        Kyiv, Ukraine<br>
+        Tel. +38 063 01 01 797<br>
+        eugeniymeo@gmail.com<br>
+      </div>
+      <div class="contact_footer">
+        <div class="page">
+          Social media<br>
+          ______
+        </div>
+        <div class="soc_all">
+          <div class="all"><img alt="" src="{% static 'gofriends_site/img/soc1.jpg' %}"></div>
+          <div class="all"><img alt="" src="{% static 'gofriends_site/img/soc2.jpg' %}"></div>
+          <div class="all"><img alt="" src="{% static 'gofriends_site/img/soc3.jpg' %}"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="line_footer">
     <div class="container">
-        <div class=left_uslugi>
-            <div class=left_uslugi_zag>web development</div>
-            <div class=left_uslugi_podpis>Услуги по созданию и продвижению сайтов</div>
-            <div class=left_uslugi_text><p style="text-align: justify;"><span>Gofriends</span> ориентируется на
-                индивидуальные бизнес-потребности и текущие рыночные тенденции. Мы уже создали несколько десятков
-                пользовательских веб-сайтов для успешных стартапов и предприятий, таких как рестораны, киностудии или
-                интернет-магазины.</p>
-                <p style="text-align: justify;">Наши талантливые разработчики хорошо разбираются в самых передовых,
-                    эффективных технологиях <span>программирования</span>, имеют опыт работы как на стороне клиента, так
-                    и на стороне сервера, разработке контента и создании CMS. В зависимости от сложности и целей проекта
-                    мы выбираем лучшие инструменты разработки.</p>
-                <p style="text-align: justify;">Мы помогаем в реализации ваших бизнес-целей, привлекая множество
-                    заинтересованных клиентов, увеличивая объем продаж и прибыль.</p></div>
-        </div>
+      <div class="bl">
+        All rights reserved GoFriends © 2013-2018
+      </div>
+      <div class="bl">
+        Privacy Policy
+      </div>
     </div>
-</div>
-<div class="container">
-    <div class=all_iko>
-        <div class=servis_zag>SERVICES</div>
-        <div class=iko_one>online store</div>
-        <div class=iko_two>corporate website</div>
-        <div class=iko_three>landing page</div>
-        <div class=iko_three></div>
-        <div class=iko_four>каталог</div>
-        <div class=iko_five>уникальный портал
-            <span>
-&bull;Уникальный дизайн сайта<br>
-&bull;21 функциональный модуль<br>
-&bull;Система управления сайтом (CMS)<br>
-&bull;Базовое наполнение сайта<br>
-&bull;Обучение работе с сайтом<br>
-&bull;Добавление сайта в Google, Яндекс</span></div>
-
-    </div>
-</div>
-
-<div class="container">
-
-    <div class=servis_zag>developing process</div>
-</div>
-
-<div class="container">
-    <div class=fon_proces>
-        <div class=log1>
-            <img src="{% static 'gofriends_site/img/log1.jpg' %}" alt=""><br>Meeting
-        </div>
-        <div class=log2>
-            <img src="{% static 'gofriends_site/img/log2.jpg' %}" alt=""><br>Specifications
-        </div>
-        <div class=log3>
-            <img src="{% static 'gofriends_site/img/log3.jpg' %}" alt=""><br>Estimate
-        </div>
-        <div class=log4>
-            <img src="{% static 'gofriends_site/img/log4.jpg' %}" alt=""><br>Development
-        </div>
-        <div class=log5>
-            <img src="{% static 'gofriends_site/img/log5.jpg' %}" alt=""><br>UI/UX
-        </div>
-        <div class=log6>
-            <img src="{% static 'gofriends_site/img/log6.jpg' %}" alt=""><br>Project plan
-        </div>
-        <div class=log7>
-            <img src="{% static 'gofriends_site/img/log7.jpg' %}" alt=""><br>QA
-        </div>
-        <div class=log8>
-            <img src="{% static 'gofriends_site/img/log8.jpg' %}" alt=""><br>QA
-        </div>
-        <div class=log9>
-            <img src="{% static 'gofriends_site/img/log9.jpg' %}" alt=""><br>Support
-        </div>
+  </div>
 
 
-    </div>
+<!-- scripts -->
+<script src="{% static "gofriends_site/js/particles.js" %}"></script>
+<script src="{% static "gofriends_site/js/app.js" %}"></script>
 
-</div>
-<div class=ten_proces>
+<!-- stats.js -->
+<script src="{% static "gofriends_site/js/stats.js" %}"></script>
+<script>
+  var , .particles-js, stats, update;
+  stats = new Stats;
+  stats.setMode(0);
+  stats.domElement.style.position = 'absolute';
+  stats.domElement.style.left = '0px';
+  stats.domElement.style.top = '0px';
+  document.body.appendChild(stats.domElement);
+  count_particles = document.querySelector('.js-count-particles');
+  update = function() {
+    stats.begin();
+    stats.end();
+    if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
+      count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+    }
+    requestAnimationFrame(update);
+  };
+  requestAnimationFrame(update);
+</script>
 
-</div>
-<div class=servis_zag>technologies we use</div>
-<div class="container">
-    <div class=all_teh>
-        <div class=teh1>
-            <img src="{% static 'gofriends_site/img/teh1.jpg' %}" alt=""><br>Python
-        </div>
-        <div class=teh1>
-            <img src="{% static 'gofriends_site/img/teh2.jpg' %}" alt=""><br>PHP
-        </div>
-        <div class=teh1>
-            <img src="{% static 'gofriends_site/img/teh3.jpg' %}" alt=""><br>Node JS
-        </div>
-        <div class=teh1>
-            <img src="{% static 'gofriends_site/img/teh4.jpg' %}" alt=""><br>Django
-        </div>
-        <div class=teh1>
-            <img src="{% static 'gofriends_site/img/teh5.jpg' %}" alt=""><br>Laravel
-        </div>
-        <div class=teh1>
-            <img src="{% static 'gofriends_site/img/teh6.jpg' %}" alt=""><br>Angular JS
-        </div>
-        <div class=teh1>
-            <img src="{% static 'gofriends_site/img/teh7.jpg' %}" alt=""><br>Vue JS
-        </div>
-        <div class=teh1>
-            <img src="{% static 'gofriends_site/img/teh8.jpg' %}" alt=""><br>React JS
-        </div>
-        <div class=teh1>
-            <img src="{% static 'gofriends_site/img/teh9.jpg' %}" alt=""><br>WordPress
-        </div>
-        <div class=teh1>
-            <img src="{% static 'gofriends_site/img/teh10.jpg' %}" alt=""><br>HTML5
-        </div>
-
-        <div class=text>
-This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
-Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Suspendisse in orci enim.
-            </div>
-    </div>
-</div>
-
-<div class=fon_forma>
-    <div class=form>
-        Any questions?
-
-        <div class=form_text>
-           Please, fill out the form and we will contact you as soon as possible
-           </div>
-        <div class="contacts__form">
-            <input type="text" placeholder="Your Name" value="" class="contacts__field">
-            <input type='text' placeholder="Your Email" value="" class="contacts__field">
-            <button type="submit" class="contacts__btn">Send</button>
-        </div>
-    </div>
-</div>
-<div class="container">
-    <div class=footer>
-        <div class=logo_footer>
-            <img src={% static 'gofriends_site/img/logo_footer.jpg' %} alt="">
-        </div>
-        <div class=mebu_footer>
-            <div class=page>Pages<br>___</div>
-
-            Home<br>
-            Case studies<br>
-            About us<br>
-            Our team<br>
-        </div>
-
-        <div class=contact_footer>
-            <div class=page>Contact info<br>______</div>
-
-            28a Panasa Mirnogo st.<br>
-            Kyiv, Ukraine<br>
-            Tel. +38 063 01 01 797<br>
-            eugeniymeo@gmail.com<br>
-        </div>
-        <div class=contact_footer>
-            <div class=page>Social media<br>______</div>
-            <div class=soc_all>
-                <div class=all>
-                    <img src={% static 'gofriends_site/img/soc1.jpg' %} alt="">
-                </div>
-                <div class=all>
-                    <img src={% static 'gofriends_site/img/soc2.jpg' %} alt="">
-                </div>
-                <div class=all>
-                    <img src={% static 'gofriends_site/img/soc3.jpg' %} alt="">
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-</div>
-<div class=line_footer>
-    <div class="container">
-        <div class=bl>
-All rights reserved GoFriends  © 2013-2018
-</div>
-        <div class=bl>
-Privacy Policy
-</div>
-    </div>
-</div>
-<script src="{% static 'gofriends_site/js/jquery-1.js' %}"></script>
-<script src="{% static 'gofriends_site/js/bootstrap.js' %}"></script>
-<script src="{% static 'gofriends_site/js/holder.js' %}"></script>
-
+  <script src="{% static "gofriends_site/js/jquery-1.js" %}"></script>
+  <script src="{% static "gofriends_site/js/bootstrap.js" %}"></script>
+  <script src="{% static "gofriends_site/js/holder.js" %}"></script>
 
 </body>
 </html>
